@@ -1,0 +1,1889 @@
+{
+    "providerCoverage": "ALL",
+    "itineraryType": "ONE_WAY",
+    "cheapestFlightNonStop": false,
+    "pointOfSale": {
+        "requestSourceCountry": "US",
+        "country": "US",
+        "currency": "USD"
+    },
+    "airport": [
+        {
+            "code": "TLV",
+            "name": "Ben Gurion Airport",
+            "city": "Tel Aviv",
+            "country": "Israel",
+            "latitude": 32.007313197,
+            "longitude": 34.880123581,
+            "isoCountryCode": "IL",
+            "cityId": "2000000927",
+            "cityGisId": "5000470936",
+            "gmtTimeZoneOffset": "+02:00"
+        },
+        {
+            "code": "AKL",
+            "name": "Auckland Intl Airport",
+            "city": "Auckland",
+            "country": "New Zealand",
+            "latitude": -37.012729791,
+            "longitude": 174.783640193,
+            "isoCountryCode": "NZ",
+            "cityId": "2000000856",
+            "cityGisId": "3000040040",
+            "gmtTimeZoneOffset": "+12:00"
+        },
+        {
+            "code": "DXB",
+            "name": "Dubai Intl Airport",
+            "city": "Dubai",
+            "country": "United Arab Emirates",
+            "latitude": 25.256036905,
+            "longitude": 55.365943067,
+            "isoCountryCode": "AE",
+            "cityId": "2000010950",
+            "cityGisId": "5000003658",
+            "gmtTimeZoneOffset": "+04:00"
+        },
+        {
+            "code": "MEL",
+            "name": "Tullamarine Intl Airport",
+            "city": "Melbourne",
+            "country": "Australia",
+            "latitude": -37.661604494,
+            "longitude": 144.836454045,
+            "isoCountryCode": "AU",
+            "cityId": "2000000855",
+            "cityGisId": "3000040001",
+            "gmtTimeZoneOffset": "+10:00"
+        },
+        {
+            "code": "AMM",
+            "name": "Queen Alia Intl Airport",
+            "city": "Amman",
+            "country": "Jordan",
+            "latitude": 31.723298018,
+            "longitude": 35.99429731,
+            "isoCountryCode": "JO",
+            "cityId": "2000000181",
+            "cityGisId": "5000050108",
+            "gmtTimeZoneOffset": "+02:00"
+        },
+        {
+            "code": "DOH",
+            "name": "Doha Intl Airport",
+            "city": "Doha",
+            "country": "Qatar",
+            "latitude": 25.267381469,
+            "longitude": 51.562248153,
+            "isoCountryCode": "QA",
+            "cityId": "3000000152",
+            "cityGisId": "5000044785",
+            "gmtTimeZoneOffset": "+03:00"
+        },
+        {
+            "code": "ZRH",
+            "name": "Zurich Intl Airport",
+            "city": "Zurich",
+            "country": "Switzerland",
+            "latitude": 47.454312649,
+            "longitude": 8.550650247,
+            "isoCountryCode": "CH",
+            "cityId": "2000000407",
+            "cityGisId": "3000035894",
+            "gmtTimeZoneOffset": "+01:00"
+        },
+        {
+            "code": "SIN",
+            "name": "Changi Intl Airport",
+            "city": "Singapore",
+            "country": "Singapore",
+            "latitude": 1.366504341,
+            "longitude": 103.992412774,
+            "isoCountryCode": "SG",
+            "cityId": "2000000153",
+            "cityGisId": "3000040021",
+            "gmtTimeZoneOffset": "+08:00"
+        }
+    ],
+    "airline": [
+        {
+            "code": "FZ",
+            "name": "Flydubai",
+            "baggageContentAvailable": false,
+            "baggageFeeUrl": "www.flydubai.com/en/flying-with-us/baggage/",
+            "seatsUrl": "www.flydubai.com/en/flying-with-us/baggage/",
+            "checkInUrl": "www.flydubai.com/en/flying-with-us/check-in/",
+            "websiteUrl": "www.flydubai.com/en/",
+            "smallImage": "airLogo_FZ.png",
+            "largeImage": "airLogo_FZlg.gif",
+            "phoneNumber": "011-971-4231-1000",
+            "internationalPhoneNumber": "1-971-600 54 44 45",
+            "airlinePhoneNumbers": []
+        },
+        {
+            "code": "EK",
+            "name": "Emirates Airlines",
+            "baggageContentAvailable": true,
+            "baggageFeeUrl": "www.emirates.com/us/english/before-you-fly/baggage/",
+            "seatsUrl": "www.emirates.com/us/english/before-you-fly/baggage/",
+            "checkInUrl": "www.emirates.com/us/english/manage-booking/online-check-in.aspx",
+            "websiteUrl": "www.emirates.com/au/english/",
+            "acceptedCreditCards": [
+                "VI",
+                "MC",
+                "AX",
+                "DS"
+            ],
+            "smallImage": "airLogo_EK.png",
+            "largeImage": "airLogo_EKlg.gif",
+            "frequentFlyerProgram": "Emirates Skywards",
+            "phoneNumber": "1-800-777-3999",
+            "internationalPhoneNumber": "1-971 600 555555",
+            "airlinePhoneNumbers": []
+        },
+        {
+            "code": "QF",
+            "name": "Qantas Airways",
+            "baggageContentAvailable": true,
+            "baggageFeeUrl": "www.qantas.com.au/travel/airlines/checked-baggage/global/en",
+            "seatsUrl": "www.qantas.com.au/travel/airlines/checked-baggage/global/en",
+            "checkInUrl": "www.qantas.com/us/en.html?tabId=check-in",
+            "websiteUrl": "www.qantas.com/us/en.html",
+            "smallImage": "airLogo_QF.png",
+            "largeImage": "airLogo_QFlg.gif",
+            "allianceCode": "OW",
+            "frequentFlyerProgram": "Qantas Frequent Flyer",
+            "phoneNumber": "1-800-227-4500",
+            "airlinePhoneNumbers": []
+        },
+        {
+            "code": "RJ",
+            "name": "Royal Jordanian",
+            "baggageContentAvailable": true,
+            "baggageFeeUrl": "www.rj.com/en/info-and-tips/baggage-information/checked-luggage",
+            "seatsUrl": "www.rj.com/en/info-and-tips/baggage-information/checked-luggage",
+            "checkInUrl": "www.rj.com/",
+            "websiteUrl": "www.rj.com/",
+            "acceptedCreditCards": [
+                "VI",
+                "MC",
+                "AX",
+                "DS"
+            ],
+            "smallImage": "airLogo_RJ.png",
+            "largeImage": "airLogo_RJlg.gif",
+            "allianceCode": "OW",
+            "frequentFlyerProgram": "Royal Jordanian's Royal Plus",
+            "phoneNumber": "1-212-949-0050",
+            "internationalPhoneNumber": "011 962 6 51000 00",
+            "airlinePhoneNumbers": []
+        },
+        {
+            "code": "QR",
+            "name": "Qatar Airways",
+            "baggageContentAvailable": true,
+            "baggageFeeUrl": "www.qatarairways.com/us/en/baggage.page",
+            "seatsUrl": "www.qatarairways.com/us/en/baggage.page",
+            "checkInUrl": "cki.qatarairways.com/cki/dashboard",
+            "websiteUrl": "www.qatarairways.com/en-us/homepage.html",
+            "acceptedCreditCards": [
+                "VI",
+                "MC",
+                "AX",
+                "DS"
+            ],
+            "smallImage": "airLogo_QR.png",
+            "largeImage": "airLogo_QRlg.gif",
+            "allianceCode": "OW",
+            "frequentFlyerProgram": "Qatar Airways Privilege Club",
+            "phoneNumber": "1-877-777-2827",
+            "airlinePhoneNumbers": []
+        },
+        {
+            "code": "LX",
+            "name": "SWISS",
+            "baggageContentAvailable": true,
+            "baggageFeeUrl": "www.swiss.com/us/EN/prepare/baggage",
+            "seatsUrl": "www.swiss.com/us/EN/prepare/baggage",
+            "checkInUrl": "www.swiss.com/us/en/Login/PnrLogin",
+            "websiteUrl": "www.swiss.com/us/en",
+            "acceptedCreditCards": [
+                "VI",
+                "MC",
+                "AX"
+            ],
+            "smallImage": "airLogo_LX.png",
+            "largeImage": "airLogo_LXlg.gif",
+            "allianceCode": "SA",
+            "frequentFlyerProgram": "Swiss Miles and More",
+            "phoneNumber": "1-877-359-7947",
+            "internationalPhoneNumber": "011 41 848 700 700",
+            "airlinePhoneNumbers": []
+        },
+        {
+            "code": "SQ",
+            "name": "Singapore Airlines",
+            "baggageContentAvailable": true,
+            "baggageFeeUrl": "www.singaporeair.com/en_UK/travel-information/baggage-allowances/",
+            "seatsUrl": "www.singaporeair.com/en_UK/travel-information/baggage-allowances/",
+            "checkInUrl": "www.singaporeair.com/#",
+            "websiteUrl": "www.singaporeair.com/#",
+            "smallImage": "airLogo_SQ.png",
+            "largeImage": "airLogo_SQlg.gif",
+            "allianceCode": "SA",
+            "frequentFlyerProgram": "Singapore Airlines KrisFlyer",
+            "phoneNumber": "1-800-742-3333",
+            "airlinePhoneNumbers": []
+        }
+    ],
+    "equipment": [
+        {
+            "code": "7M9",
+            "name": "Boeing 737-MAX-9",
+            "type": "J"
+        },
+        {
+            "code": "77W",
+            "name": "Boeing 777-300ER",
+            "type": "J"
+        },
+        {
+            "code": "388",
+            "name": "Airbus A380",
+            "type": "J"
+        },
+        {
+            "code": "73H",
+            "name": "Boeing 737",
+            "type": "J"
+        },
+        {
+            "code": "E75",
+            "name": "Embraer 175",
+            "type": "J"
+        },
+        {
+            "code": "320",
+            "name": "Airbus A320",
+            "type": "J"
+        },
+        {
+            "code": "32Q",
+            "name": "Airbus A321neo",
+            "type": "J"
+        },
+        {
+            "code": "359",
+            "name": "Airbus A359",
+            "type": "J"
+        }
+    ],
+    "alliance": [
+        {
+            "code": "OW",
+            "name": "oneworld",
+            "memberCodes": [
+                "JJ",
+                "AA",
+                "AB",
+                "QR",
+                "JL",
+                "S7",
+                "LP",
+                "XL",
+                "CX",
+                "QF",
+                "LA",
+                "UL",
+                "AY",
+                "RJ",
+                "IB",
+                "4M",
+                "MH",
+                "BA"
+            ]
+        },
+        {
+            "code": "SA",
+            "name": "Star Alliance",
+            "memberCodes": [
+                "LO",
+                "JP",
+                "LX",
+                "UA",
+                "NZ",
+                "SA",
+                "BR",
+                "A3",
+                "SK",
+                "SN",
+                "CA",
+                "SQ",
+                "AC",
+                "OS",
+                "MS",
+                "OU",
+                "AI",
+                "CM",
+                "OZ",
+                "ZH",
+                "ET",
+                "TG",
+                "AV",
+                "TK",
+                "NH",
+                "LH",
+                "TP"
+            ]
+        }
+    ],
+    "cabinRestrictions": {},
+    "pricedItinerary": [
+        {
+            "changesAllowed": true,
+            "id": 1,
+            "lapInfantsAllowed": false,
+            "marriageGroup": [
+                [
+                    1,
+                    2,
+                    3
+                ]
+            ],
+            "merchantOfRecord": "CXR",
+            "numSeats": 3,
+            "passportRequired": true,
+            "paxMinAge": 15,
+            "pricingInfo": {
+                "ticketingAirline": "LX",
+                "currencyCode": "USD",
+                "baseFare": 4278.0,
+                "totalTaxes": 379.16,
+                "fees": [
+                    {
+                        "amount": 0.0,
+                        "feeCode": "OFFER"
+                    }
+                ],
+                "totalFare": 4657.16,
+                "uniqueBaggageId": [
+                    1
+                ],
+                "itineraryReference": {
+                    "groupId": "10916440906000064",
+                    "refId": "10916440906000064",
+                    "refKey": "eAGrVkov8kxRslIyNLA0NDMxMbA0MDMAAjMTJR2lotQ0nHLJxRAppVoAF80Pfw==",
+                    "token": "R_TLV202208281820ZRH202208282140JLX253~ZRH202208282240SIN202208291655JLX176~SIN202208292245AKL202208301220JLX9030_2_USD4657.16_10916440906000064-10916440906000064-1"
+                },
+                "voidWindowClose": "2022-08-29T23:29:00",
+                "pricesByType": {
+                    "1": {
+                        "currencyCode": "USD",
+                        "baseFare": 4278.0,
+                        "totalTaxes": 379.16,
+                        "fees": [
+                            {
+                                "amount": 0.0,
+                                "feeCode": "OFFER"
+                            }
+                        ],
+                        "totalFare": 4657.16
+                    }
+                },
+                "paxTypePrices": {
+                    "ADT": {
+                        "pointOfSale": 1,
+                        "transaction": 1,
+                        "display": 1
+                    }
+                },
+                "fareInfos": [],
+                "changeInfos": [],
+                "voidWindowCloseTZDesignator": "-0400"
+            },
+            "slice": [
+                {
+                    "sliceRefId": 1,
+                    "uniqueSliceId": 1918120768
+                }
+            ],
+            "totalTripDurationInHours": 33,
+            "baggageURL": "https://www.priceline.com/help#/faq/ext(baggage_fee_LX)",
+            "isSynthesized": false,
+            "openJaw": false,
+            "isFused": false,
+            "merchandisingValues": [
+                1
+            ],
+            "isFareFamily": true,
+            "isCugEligible": false,
+            "isSaleEligible": false,
+            "upsellOptions": [],
+            "baggages": []
+        },
+        {
+            "changesAllowed": true,
+            "id": 2,
+            "lapInfantsAllowed": false,
+            "marriageGroup": [
+                [
+                    1,
+                    2,
+                    3
+                ]
+            ],
+            "merchantOfRecord": "CXR",
+            "numSeats": 7,
+            "passportRequired": true,
+            "paxMinAge": 16,
+            "interline": true,
+            "pricingInfo": {
+                "ticketingAirline": "QR",
+                "currencyCode": "USD",
+                "baseFare": 4173.0,
+                "totalTaxes": 523.56,
+                "fees": [
+                    {
+                        "amount": 0.0,
+                        "feeCode": "OFFER"
+                    }
+                ],
+                "totalFare": 4696.56,
+                "uniqueBaggageId": [
+                    2
+                ],
+                "itineraryReference": {
+                    "groupId": "10916440906000064",
+                    "refId": "10916440906000034",
+                    "refKey": "eAGrVkov8kxRslIyNLA0NDMxMbA0MDMAAjMTJR2lotQ0bHLGILnkYoiUUi0AF6APfA==",
+                    "token": "R_TLV202208281910AMM202208281955ZRJ345~AMM202208291015DOH202208291255JQR6113~DOH202208300120AKL202208310500JQR914_2_USD4696.56_10916440906000064-10916440906000034-1"
+                },
+                "voidWindowClose": "2022-08-29T23:29:00",
+                "pricesByType": {
+                    "1": {
+                        "currencyCode": "USD",
+                        "baseFare": 4173.0,
+                        "totalTaxes": 523.56,
+                        "fees": [
+                            {
+                                "amount": 0.0,
+                                "feeCode": "OFFER"
+                            }
+                        ],
+                        "totalFare": 4696.56
+                    }
+                },
+                "paxTypePrices": {
+                    "ADT": {
+                        "pointOfSale": 1,
+                        "transaction": 1,
+                        "display": 1
+                    }
+                },
+                "fareInfos": [],
+                "changeInfos": [],
+                "voidWindowCloseTZDesignator": "-0400"
+            },
+            "slice": [
+                {
+                    "sliceRefId": 1,
+                    "uniqueSliceId": 6873566
+                }
+            ],
+            "totalTripDurationInHours": 48,
+            "baggageURL": "https://www.priceline.com/help/#/faq/ext(air_phone_list)",
+            "isSynthesized": false,
+            "openJaw": false,
+            "isFused": false,
+            "isFareFamily": true,
+            "isCugEligible": false,
+            "isSaleEligible": false,
+            "upsellOptions": [],
+            "baggages": []
+        },
+        {
+            "changesAllowed": true,
+            "id": 3,
+            "lapInfantsAllowed": false,
+            "marriageGroup": [
+                [
+                    1,
+                    2
+                ]
+            ],
+            "merchantOfRecord": "CXR",
+            "numSeats": 7,
+            "passportRequired": true,
+            "paxMinAge": 15,
+            "pricingInfo": {
+                "ticketingAirline": "EK",
+                "currencyCode": "USD",
+                "baseFare": 4617.0,
+                "totalTaxes": 1043.36,
+                "fees": [
+                    {
+                        "amount": 0.0,
+                        "feeCode": "OFFER"
+                    }
+                ],
+                "totalFare": 5660.36,
+                "uniqueBaggageId": [
+                    3
+                ],
+                "itineraryReference": {
+                    "groupId": "10916440906000064",
+                    "refId": "10916440906000024",
+                    "refKey": "eAGrVkov8kxRslIyNLA0NDMxMbA0MDMAAjMTJR2lotQ0bHJGILnkYoiUUi0AF5EPew==",
+                    "token": "R_TLV202208282355DXB202208290420IEK2368~DXB202208290830AKL202208301120IEK448_2_USD5660.36_10916440906000064-10916440906000024-1"
+                },
+                "voidWindowClose": "2022-08-29T23:29:00",
+                "pricesByType": {
+                    "1": {
+                        "currencyCode": "USD",
+                        "baseFare": 4617.0,
+                        "totalTaxes": 1043.36,
+                        "fees": [
+                            {
+                                "amount": 0.0,
+                                "feeCode": "OFFER"
+                            }
+                        ],
+                        "totalFare": 5660.36
+                    }
+                },
+                "paxTypePrices": {
+                    "ADT": {
+                        "pointOfSale": 1,
+                        "transaction": 1,
+                        "display": 1
+                    }
+                },
+                "fareInfos": [],
+                "changeInfos": [],
+                "voidWindowCloseTZDesignator": "-0400"
+            },
+            "slice": [
+                {
+                    "sliceRefId": 1,
+                    "uniqueSliceId": 1197852039
+                }
+            ],
+            "totalTripDurationInHours": 26,
+            "baggageURL": "https://www.priceline.com/help#/faq/ext(baggage_fee_EK)",
+            "isSynthesized": false,
+            "openJaw": false,
+            "isFused": false,
+            "merchandisingValues": [
+                3,
+                5
+            ],
+            "isFareFamily": true,
+            "isCugEligible": false,
+            "isSaleEligible": false,
+            "upsellOptions": [],
+            "baggages": []
+        },
+        {
+            "changesAllowed": true,
+            "id": 4,
+            "lapInfantsAllowed": false,
+            "marriageGroup": [
+                [
+                    1,
+                    2
+                ]
+            ],
+            "merchantOfRecord": "CXR",
+            "numSeats": 4,
+            "passportRequired": true,
+            "paxMinAge": 15,
+            "pricingInfo": {
+                "ticketingAirline": "EK",
+                "currencyCode": "USD",
+                "baseFare": 5650.0,
+                "totalTaxes": 1043.36,
+                "fees": [
+                    {
+                        "amount": 0.0,
+                        "feeCode": "OFFER"
+                    }
+                ],
+                "totalFare": 6693.36,
+                "uniqueBaggageId": [
+                    3
+                ],
+                "itineraryReference": {
+                    "groupId": "10916440906000064",
+                    "refId": "10916440906000054",
+                    "refKey": "eAGrVkov8kxRslIyNLA0NDMxMbA0MDMAAjMTJR2lotQ0bHKmILnkYoiUUi0AF74Pfg==",
+                    "token": "R_TLV202208281955DXB202208282359CEK932~DXB202208290830AKL202208301120CEK448_2_USD6693.36_10916440906000064-10916440906000054-1"
+                },
+                "voidWindowClose": "2022-08-29T23:29:00",
+                "pricesByType": {
+                    "1": {
+                        "currencyCode": "USD",
+                        "baseFare": 5650.0,
+                        "totalTaxes": 1043.36,
+                        "fees": [
+                            {
+                                "amount": 0.0,
+                                "feeCode": "OFFER"
+                            }
+                        ],
+                        "totalFare": 6693.36
+                    }
+                },
+                "paxTypePrices": {
+                    "ADT": {
+                        "pointOfSale": 1,
+                        "transaction": 1,
+                        "display": 1
+                    }
+                },
+                "fareInfos": [],
+                "changeInfos": [],
+                "voidWindowCloseTZDesignator": "-0400"
+            },
+            "slice": [
+                {
+                    "sliceRefId": 1,
+                    "uniqueSliceId": 281181392
+                }
+            ],
+            "totalTripDurationInHours": 30,
+            "baggageURL": "https://www.priceline.com/help#/faq/ext(baggage_fee_EK)",
+            "isSynthesized": false,
+            "openJaw": false,
+            "isFused": false,
+            "isFareFamily": true,
+            "isCugEligible": false,
+            "isSaleEligible": false,
+            "upsellOptions": [],
+            "baggages": []
+        },
+        {
+            "changesAllowed": true,
+            "id": 5,
+            "lapInfantsAllowed": false,
+            "marriageGroup": [
+                [
+                    1,
+                    2,
+                    3
+                ]
+            ],
+            "merchantOfRecord": "CXR",
+            "numSeats": 5,
+            "passportRequired": true,
+            "paxMinAge": 15,
+            "pricingInfo": {
+                "ticketingAirline": "EK",
+                "currencyCode": "USD",
+                "baseFare": 6979.0,
+                "totalTaxes": 1043.36,
+                "fees": [
+                    {
+                        "amount": 0.0,
+                        "feeCode": "OFFER"
+                    }
+                ],
+                "totalFare": 8022.36,
+                "uniqueBaggageId": [
+                    3
+                ],
+                "itineraryReference": {
+                    "groupId": "10916440906000064",
+                    "refId": "10916440906000044",
+                    "refKey": "eAGrVkov8kxRslIyNLA0NDMxMbA0MDMAAjMTJR2lotQ0bHImILnkYoiUUi0AF68PfQ==",
+                    "token": "R_TLV202208282355DXB202208290420JEK2368~DXB202208291005MEL202208300530JEK406~MEL202208300710AKL202208301245JEK5013_2_USD8022.36_10916440906000064-10916440906000044-1"
+                },
+                "voidWindowClose": "2022-08-29T23:29:00",
+                "pricesByType": {
+                    "1": {
+                        "currencyCode": "USD",
+                        "baseFare": 6979.0,
+                        "totalTaxes": 1043.36,
+                        "fees": [
+                            {
+                                "amount": 0.0,
+                                "feeCode": "OFFER"
+                            }
+                        ],
+                        "totalFare": 8022.36
+                    }
+                },
+                "paxTypePrices": {
+                    "ADT": {
+                        "pointOfSale": 1,
+                        "transaction": 1,
+                        "display": 1
+                    }
+                },
+                "fareInfos": [],
+                "changeInfos": [],
+                "voidWindowCloseTZDesignator": "-0400"
+            },
+            "slice": [
+                {
+                    "sliceRefId": 1,
+                    "uniqueSliceId": 813554296
+                }
+            ],
+            "totalTripDurationInHours": 27,
+            "baggageURL": "https://www.priceline.com/help#/faq/ext(baggage_fee_EK)",
+            "isSynthesized": false,
+            "openJaw": false,
+            "isFused": false,
+            "merchandisingValues": [
+                5
+            ],
+            "isFareFamily": true,
+            "isCugEligible": false,
+            "isSaleEligible": false,
+            "upsellOptions": [],
+            "baggages": []
+        }
+    ],
+    "slice": [
+        {
+            "duration": 1825,
+            "overnightConnection": [
+                2
+            ],
+            "overnightLayover": true,
+            "sliceKey": "0828TLVEK932C1118768b4EK448C1118768b4",
+            "uniqueSliceId": 281181392,
+            "segment": [
+                {
+                    "bkgClass": "C",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": false,
+                    "id": 1,
+                    "numSeats": 4,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 386283427,
+                    "brandId": "1118768b4",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "C",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": false,
+                    "id": 2,
+                    "numSeats": 4,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 1894459544,
+                    "brandId": "1118768b4",
+                    "intermediateStops": [
+                        {
+                            "value": "KUL",
+                            "duration": "PT1H30M"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "duration": 1585,
+            "overnightLayover": false,
+            "sliceKey": "0828TLVEK2368I1118771b3EK448I1118771b3",
+            "uniqueSliceId": 1197852039,
+            "segment": [
+                {
+                    "bkgClass": "I",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": false,
+                    "id": 1,
+                    "numSeats": 7,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 672882011,
+                    "brandId": "1118771b3",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "I",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": false,
+                    "id": 2,
+                    "numSeats": 7,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 1894459544,
+                    "brandId": "1118771b3",
+                    "intermediateStops": [
+                        {
+                            "value": "KUL",
+                            "duration": "PT1H30M"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "duration": 1670,
+            "overnightLayover": false,
+            "sliceKey": "0828TLVEK2368J1118768b4EK406J1118768b4EK5013J1118768b4",
+            "uniqueSliceId": 813554296,
+            "segment": [
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": false,
+                    "id": 1,
+                    "numSeats": 5,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 672882011,
+                    "brandId": "1118768b4",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": false,
+                    "id": 2,
+                    "numSeats": 5,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 612778180,
+                    "brandId": "1118768b4",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": true,
+                    "id": 3,
+                    "numSeats": 5,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 60044171,
+                    "brandId": "1118768b4",
+                    "intermediateStops": []
+                }
+            ]
+        },
+        {
+            "duration": 2930,
+            "overnightConnection": [
+                2
+            ],
+            "overnightLayover": true,
+            "sliceKey": "0828TLVRJ345Z1123714b2QR6113J1123714b2QR914J1123714b2",
+            "uniqueSliceId": 6873566,
+            "segment": [
+                {
+                    "bkgClass": "Z",
+                    "cabinClass": "ECO",
+                    "cabinName": "Economy Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": true,
+                    "id": 1,
+                    "numSeats": 7,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 893907004,
+                    "brandId": "1123714b2",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": true,
+                    "id": 2,
+                    "numSeats": 7,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 169206751,
+                    "brandId": "1123714b2",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": true,
+                    "id": 3,
+                    "numSeats": 7,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 261702834,
+                    "brandId": "1123714b2",
+                    "intermediateStops": [
+                        {
+                            "value": "ADL",
+                            "duration": "PT1H35M"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "duration": 1980,
+            "overnightLayover": false,
+            "sliceKey": "0828TLVLX253J1103383b1LX176J1103383b1LX9030J1103383b1",
+            "uniqueSliceId": 1918120768,
+            "segment": [
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": true,
+                    "id": 1,
+                    "numSeats": 3,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 379853027,
+                    "brandId": "1103383b1",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": true,
+                    "id": 2,
+                    "numSeats": 3,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 827966055,
+                    "brandId": "1103383b1",
+                    "intermediateStops": []
+                },
+                {
+                    "bkgClass": "J",
+                    "cabinClass": "BUS",
+                    "cabinName": "Business Class",
+                    "genericSeatAssgnCost": {
+                        "amount": 0.0,
+                        "currencyCode": "USD"
+                    },
+                    "genericSeatAssgnFlag": true,
+                    "id": 3,
+                    "numSeats": 3,
+                    "seatmapAvailable": true,
+                    "seatSelectionAllowed": true,
+                    "allowStandby": true,
+                    "allowCabinUpgrades": true,
+                    "allowPreferredSeating": true,
+                    "allowPriorityBoarding": true,
+                    "uniqueSegId": 1432278871,
+                    "brandId": "1103383b1",
+                    "intermediateStops": []
+                }
+            ]
+        }
+    ],
+    "segment": [
+        {
+            "arrivalDateTime": "2022-08-29T04:20:00",
+            "departDateTime": "2022-08-28T23:55:00",
+            "destAirport": "DXB",
+            "duration": 205,
+            "equipmentCode": "7M9",
+            "flightNumber": "2368",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": false,
+            "marketingAirline": "EK",
+            "operatingAirline": "FZ",
+            "origAirport": "TLV",
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 672882011,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-30T05:30:00",
+            "departDateTime": "2022-08-29T10:05:00",
+            "destAirport": "MEL",
+            "duration": 805,
+            "equipmentCode": "388",
+            "flightNumber": "406",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": false,
+            "marketingAirline": "EK",
+            "origAirport": "DXB",
+            "overnightFlight": true,
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 612778180,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-30T11:20:00",
+            "departDateTime": "2022-08-29T08:30:00",
+            "destAirport": "AKL",
+            "duration": 1130,
+            "equipmentCode": "77W",
+            "flightNumber": "448",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": false,
+            "marketingAirline": "EK",
+            "origAirport": "DXB",
+            "overnightFlight": true,
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 1,
+            "uniqueSegId": 1894459544,
+            "intermediateStops": [
+                {
+                    "value": "KUL",
+                    "duration": "PT1H30M"
+                }
+            ]
+        },
+        {
+            "arrivalDateTime": "2022-08-28T23:59:00",
+            "departDateTime": "2022-08-28T19:55:00",
+            "destAirport": "DXB",
+            "duration": 184,
+            "equipmentCode": "77W",
+            "flightNumber": "932",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": false,
+            "marketingAirline": "EK",
+            "origAirport": "TLV",
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 386283427,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-28T21:40:00",
+            "departDateTime": "2022-08-28T18:20:00",
+            "destAirport": "ZRH",
+            "duration": 260,
+            "equipmentCode": "32Q",
+            "flightNumber": "253",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": true,
+            "marketingAirline": "LX",
+            "origAirport": "TLV",
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 379853027,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-30T12:20:00",
+            "departDateTime": "2022-08-29T22:45:00",
+            "destAirport": "AKL",
+            "duration": 575,
+            "equipmentCode": "359",
+            "flightNumber": "9030",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": true,
+            "marketingAirline": "LX",
+            "operatingAirline": "SQ",
+            "origAirport": "SIN",
+            "overnightFlight": true,
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 1432278871,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-29T12:55:00",
+            "departDateTime": "2022-08-29T10:15:00",
+            "destAirport": "DOH",
+            "duration": 160,
+            "equipmentCode": "320",
+            "flightNumber": "6113",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": true,
+            "marketingAirline": "QR",
+            "operatingAirline": "RJ",
+            "origAirport": "AMM",
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 169206751,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-28T19:55:00",
+            "departDateTime": "2022-08-28T19:10:00",
+            "destAirport": "AMM",
+            "duration": 45,
+            "equipmentCode": "E75",
+            "flightNumber": "345",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": true,
+            "marketingAirline": "RJ",
+            "origAirport": "TLV",
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 893907004,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-31T05:00:00",
+            "departDateTime": "2022-08-30T01:20:00",
+            "destAirport": "AKL",
+            "duration": 1120,
+            "equipmentCode": "77W",
+            "flightNumber": "914",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": true,
+            "marketingAirline": "QR",
+            "origAirport": "DOH",
+            "overnightFlight": true,
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 1,
+            "uniqueSegId": 261702834,
+            "intermediateStops": [
+                {
+                    "value": "ADL",
+                    "duration": "PT1H35M"
+                }
+            ]
+        },
+        {
+            "arrivalDateTime": "2022-08-29T16:55:00",
+            "departDateTime": "2022-08-28T22:40:00",
+            "destAirport": "SIN",
+            "duration": 735,
+            "equipmentCode": "77W",
+            "flightNumber": "176",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": true,
+            "marketingAirline": "LX",
+            "origAirport": "ZRH",
+            "overnightFlight": true,
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 827966055,
+            "intermediateStops": []
+        },
+        {
+            "arrivalDateTime": "2022-08-30T12:45:00",
+            "departDateTime": "2022-08-30T07:10:00",
+            "destAirport": "AKL",
+            "duration": 215,
+            "equipmentCode": "73H",
+            "flightNumber": "5013",
+            "genericSeatAssgnCost": {
+                "amount": 0.0,
+                "currencyCode": "USD"
+            },
+            "genericSeatAssgnFlag": true,
+            "marketingAirline": "EK",
+            "operatingAirline": "QF",
+            "origAirport": "MEL",
+            "premiumSeatingFlag": false,
+            "seatmapAvailable": true,
+            "subjectToGovtApproval": false,
+            "stopQuantity": 0,
+            "uniqueSegId": 60044171,
+            "intermediateStops": []
+        }
+    ],
+    "rspMetaData": {
+        "lowerBound": 1,
+        "upperBound": 5,
+        "sliceRefId": [
+            1
+        ],
+        "totalItineraries": 5,
+        "filteredCount": 5
+    },
+    "baggage": [
+        {
+            "uniqueBaggageId": 3,
+            "airline": "EK",
+            "origAirport": "TLV",
+            "destAirport": "AKL"
+        },
+        {
+            "uniqueBaggageId": 1,
+            "airline": "LX",
+            "origAirport": "TLV",
+            "destAirport": "AKL"
+        },
+        {
+            "uniqueBaggageId": 2,
+            "airline": "QR",
+            "origAirport": "TLV",
+            "destAirport": "AKL"
+        }
+    ],
+    "totalTripSummary": {
+        "itineraries": 5,
+        "minTotalFare": 4173.0,
+        "maxTotalFare": 6979.0,
+        "minTotalFareWithTaxesAndFees": 4657.16,
+        "maxTotalFareWithTaxesAndFees": 8022.36,
+        "minDurationFareWithTaxesAndFees": 5660.36,
+        "minDuration": 1585,
+        "maxDuration": 2930,
+        "minLayover": 60,
+        "maxLayover": 860,
+        "carrier": [
+            {
+                "code": "EK",
+                "airport": [
+                    {
+                        "origAirport": "TLV",
+                        "destAirport": "AKL",
+                        "stops": [
+                            {
+                                "stop": 2,
+                                "lowestTotalFare": 5660.36,
+                                "numberOfItineraries": 3
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "LX",
+                "airport": [
+                    {
+                        "origAirport": "TLV",
+                        "destAirport": "AKL",
+                        "stops": [
+                            {
+                                "stop": 2,
+                                "lowestTotalFare": 4657.16,
+                                "numberOfItineraries": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "QR",
+                "airport": [
+                    {
+                        "origAirport": "TLV",
+                        "destAirport": "AKL",
+                        "stops": [
+                            {
+                                "stop": 3,
+                                "lowestTotalFare": 4696.56,
+                                "numberOfItineraries": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stop": [
+            {
+                "numberOfStops": 2,
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4657.16
+                },
+                "numberOfItineraries": 4
+            },
+            {
+                "numberOfStops": 3,
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4696.56
+                },
+                "numberOfItineraries": 1
+            }
+        ],
+        "airline": [
+            {
+                "code": "LX",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4657.16
+                },
+                "numItineraries": 1,
+                "sponsored": false
+            },
+            {
+                "code": "EK",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 5660.36
+                },
+                "numItineraries": 3,
+                "sponsored": false
+            }
+        ],
+        "airport": [
+            {
+                "origin": "TLV",
+                "destination": "AKL",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4657.16
+                },
+                "numItineraries": 5
+            }
+        ],
+        "layoverAirport": [
+            {
+                "code": "AMM",
+                "name": "Queen Alia Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "DOH",
+                "name": "Doha Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "DXB",
+                "name": "Dubai Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 5660.36
+                }
+            },
+            {
+                "code": "MEL",
+                "name": "Tullamarine Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "SIN",
+                "name": "Changi Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "ZRH",
+                "name": "Zurich Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            }
+        ],
+        "lowestInterlineTotalFare": 4696.56,
+        "minTotalFareWithTaxesAndFeesNonSplit": 4657.16
+    },
+    "filteredTripSummary": {
+        "itineraries": 5,
+        "minTotalFare": 4173.0,
+        "maxTotalFare": 6979.0,
+        "minTotalFareWithTaxesAndFees": 4657.16,
+        "exactDateMinTotalFareWithTaxesAndFees": 4657.16,
+        "maxTotalFareWithTaxesAndFees": 8022.36,
+        "minDurationFareWithTaxesAndFees": 5660.36,
+        "minDuration": 1585,
+        "maxDuration": 2930,
+        "minLayover": 60,
+        "maxLayover": 860,
+        "carrier": [
+            {
+                "code": "EK",
+                "airport": [
+                    {
+                        "origAirport": "TLV",
+                        "destAirport": "AKL",
+                        "stops": [
+                            {
+                                "stop": 2,
+                                "lowestTotalFare": 5660.36,
+                                "numberOfItineraries": 3
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "LX",
+                "airport": [
+                    {
+                        "origAirport": "TLV",
+                        "destAirport": "AKL",
+                        "stops": [
+                            {
+                                "stop": 2,
+                                "lowestTotalFare": 4657.16,
+                                "numberOfItineraries": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "code": "QR",
+                "airport": [
+                    {
+                        "origAirport": "TLV",
+                        "destAirport": "AKL",
+                        "stops": [
+                            {
+                                "stop": 3,
+                                "lowestTotalFare": 4696.56,
+                                "numberOfItineraries": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "stop": [
+            {
+                "numberOfStops": 2,
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4657.16
+                },
+                "numberOfItineraries": 4
+            },
+            {
+                "numberOfStops": 3,
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4696.56
+                },
+                "numberOfItineraries": 1
+            }
+        ],
+        "airline": [
+            {
+                "code": "LX",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4657.16
+                },
+                "numItineraries": 1,
+                "sponsored": false
+            },
+            {
+                "code": "EK",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 5660.36
+                },
+                "numItineraries": 3,
+                "sponsored": false
+            }
+        ],
+        "airport": [
+            {
+                "origin": "TLV",
+                "destination": "AKL",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 4657.16
+                },
+                "numItineraries": 5
+            }
+        ],
+        "layoverAirport": [
+            {
+                "code": "AMM",
+                "name": "Queen Alia Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "DOH",
+                "name": "Doha Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "DXB",
+                "name": "Dubai Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 5660.36
+                }
+            },
+            {
+                "code": "MEL",
+                "name": "Tullamarine Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "SIN",
+                "name": "Changi Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            },
+            {
+                "code": "ZRH",
+                "name": "Zurich Intl Airport",
+                "lowestTotalFare": {
+                    "currency": "USD",
+                    "amount": 0.0
+                }
+            }
+        ],
+        "lowestInterlineTotalFare": 4696.56,
+        "minTotalFareWithTaxesAndFeesNonSplit": 4657.16
+    },
+    "sliceSummary": [
+        {
+            "sliceRefId": 1,
+            "minDuration": 1585,
+            "maxDuration": 2930,
+            "minLayover": 60,
+            "maxLayover": 860,
+            "minTakeoffTime": "2022-08-28T18:20:00",
+            "maxTakeoffTime": "2022-08-28T23:55:00",
+            "minLandingTime": "2022-08-30T11:20:00",
+            "maxLandingTime": "2022-08-31T05:00:00"
+        }
+    ],
+    "expressDeal": null,
+    "merchandisingLabels": [
+        {
+            "label": "CHEAPEST",
+            "value": 1
+        },
+        {
+            "label": "QUICKEST",
+            "value": 3
+        },
+        {
+            "label": "NIGHT_OWL",
+            "value": 5
+        }
+    ],
+    "brandReference": [
+        {
+            "brandId": "1118768b4",
+            "name": "Business Flex Plus",
+            "tier": 9,
+            "brandAttributes": [
+                {
+                    "type": "CHECKED_BAG",
+                    "description": "Checked bags",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "MEALS",
+                    "description": "Meal",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "REBOOKING",
+                    "description": "Changeable Ticket",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "CARRY_ON",
+                    "description": "Carry-on",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "WIFI",
+                    "description": "WiFi",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "SEATS",
+                    "description": "Seat Choice",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "REFUND",
+                    "description": "Cancellation",
+                    "inclusion": "INCLUDED"
+                }
+            ]
+        },
+        {
+            "brandId": "1118771b3",
+            "name": "Business Flex",
+            "tier": 8,
+            "brandAttributes": [
+                {
+                    "type": "CHECKED_BAG",
+                    "description": "Checked bags",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "MEALS",
+                    "description": "Meal",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "REBOOKING",
+                    "description": "Changeable Ticket",
+                    "inclusion": "CHARGEABLE"
+                },
+                {
+                    "type": "CARRY_ON",
+                    "description": "Carry-on",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "WIFI",
+                    "description": "WiFi",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "SEATS",
+                    "description": "Seat Choice",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "REFUND",
+                    "description": "Cancellation",
+                    "inclusion": "CHARGEABLE"
+                }
+            ]
+        },
+        {
+            "brandId": "1123714b2",
+            "name": "Business Elite",
+            "tier": 8,
+            "brandAttributes": [
+                {
+                    "type": "CHECKED_BAG",
+                    "description": "Checked bags",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "MEALS",
+                    "description": "Meal",
+                    "inclusion": "NOT_INCLUDED"
+                },
+                {
+                    "type": "REBOOKING",
+                    "description": "Changeable Ticket",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "WIFI",
+                    "description": "WiFi",
+                    "inclusion": "NOT_INCLUDED"
+                },
+                {
+                    "type": "CARRY_ON",
+                    "description": "Carry-on",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "SEATS",
+                    "description": "Seat Choice",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "REFUND",
+                    "description": "Cancellation",
+                    "inclusion": "INCLUDED"
+                }
+            ]
+        },
+        {
+            "brandId": "1103383b1",
+            "name": "Business Base",
+            "tier": 9,
+            "brandAttributes": [
+                {
+                    "type": "CHECKED_BAG",
+                    "description": "Checked bags",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "MEALS",
+                    "description": "Meal",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "REBOOKING",
+                    "description": "Changeable Ticket",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "CARRY_ON",
+                    "description": "Carry-on",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "WIFI",
+                    "description": "WiFi",
+                    "inclusion": "CHARGEABLE"
+                },
+                {
+                    "type": "SEATS",
+                    "description": "Seat Choice",
+                    "inclusion": "INCLUDED"
+                },
+                {
+                    "type": "REFUND",
+                    "description": "Cancellation",
+                    "inclusion": "CHARGEABLE"
+                }
+            ]
+        }
+    ]
+}
