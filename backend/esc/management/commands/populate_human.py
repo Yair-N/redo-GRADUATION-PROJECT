@@ -21,6 +21,9 @@ class Command(BaseCommand):
             User.objects.create_superuser("yair", "yair.notkovich@gmail.com", "wbstbh")
         except:
             pass
+        super_profile = UserProfile.objects.get_or_create(username="yair")
+        super_profile.avatar = ""
+        super_profile.role = User_Role.objects.get(id=4)
 
         try:
             with open(jsonPath, "r", encoding="utf8") as data:

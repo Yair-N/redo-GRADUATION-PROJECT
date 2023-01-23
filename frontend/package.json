@@ -19,6 +19,12 @@
   "license": "",
   "homepage": "",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.5",
+    "@mui/styled-engine-sc": "^5.11.0",
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.3",
     "css-loader": "^6.7.3",
@@ -27,6 +33,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
+    "react-router-dom": "^6.7.0",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.6",
     "svg-url-loader": "^8.0.0"

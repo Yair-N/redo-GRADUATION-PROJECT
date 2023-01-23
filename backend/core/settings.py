@@ -37,8 +37,8 @@ SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
-ALLOWED_HOSTS = ["127.0.0.1", "10.252.0.110"]
-CORS_ALLOW_ALL_ORIGINS = True
+ALLOWED_HOSTS = ["http://localhost:3000", "127.0.0.1"]
+CORS_ALLOW_ALL_ORIGINS = False
 
 # custom User
 AUTH_USER_MODEL = "users.User"
@@ -61,6 +61,22 @@ INSTALLED_APPS = [
     "geo.apps.GeoConfig",
     "esc.apps.EscConfig",
 ]
+
+
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+]
+
+
+CORS_ORIGIN_WHITELIST = ("http://localhost:3000",)
+
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -95,15 +111,6 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
 }
 
-MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
 
 ROOT_URLCONF = "core.urls"
 
