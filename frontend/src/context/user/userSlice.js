@@ -12,7 +12,7 @@ const initialState = {
     date_joined: "",
     user_id: 0,
     avatar: null,
-    role: 0,
+    role: 1,
     // Phone_No: "",
     // credit: "",
     // bookings: [],
@@ -27,9 +27,19 @@ export const initiateUserAsync = createAsyncThunk(
 
     async () => {
         await initUser();
+        console.log('signed out')
+
     }
 );
 
+export const getUserAsync = createAsyncThunk(
+    "user/get_profile",
+    async () => {
+        const response = await getUserProfile()
+        console.log(response.data)
+        return response.data;
+    }
+);
 
 export const uploadPictureAsync = createAsyncThunk(
     "user/uploadImage",
@@ -52,14 +62,6 @@ export const bookFlightAsync = createAsyncThunk(
     }
 )
 
-export const getUserAsync = createAsyncThunk(
-    "user/get_profile",
-    async () => {
-        const response = await getUserProfile()
-
-        return response.data;
-    }
-)
 
 export const updateUserAsync = createAsyncThunk(
     "user/update",
@@ -83,20 +85,26 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setBaseUser: (state, action) => {
-            state.username = action.payload.username
-            state.role = action.payload.role
-            state.avatar = IMAGE_URL(action.payload.avatar) 
-            state.profile_id = action.payload.id
-            state.user_id = action.payload.user_id
-            console.log('base user', action.payload)
+            let keys = Object.keys(state);
+            keys.forEach((key) => {
+                state[key] = action.payload[key]
+                console.log(state[key])
+            });
+            // state.username = action.payload.username
+            // state.role = action.payload.role
+            state.avatar = IMAGE_URL(action.payload.avatar)
+            // state.profile_id = action.payload.id
+            // state.user_id = action.payload.user
+            // // console.log('base user', action.payload)
 
         },
         initUser: (state) => {
 
-            const keys = Object.keys(state);
+            let keys = Object.keys(state);
             keys.forEach((key) => {
                 state[key] = initialState[key]
             });
+            state = { ...initialState }
         },
         setAddress: (state, action) => {
             state.address = { ...action.payload.address }
@@ -105,7 +113,10 @@ export const userSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(initiateUserAsync.fulfilled, (state) => {
-                state.role = 0
+                let keys = Object.keys(state);
+                keys.forEach((key) => {
+                    state[key] = initialState[key]
+                });
             })
             .addCase(uploadPictureAsync.fulfilled, (state, action) => {
                 state.avatar = action.payload.Photo
@@ -115,17 +126,16 @@ export const userSlice = createSlice({
             })
             .addCase(getUserAsync.fulfilled, (state, action) => {
 
-                const state_keys = Object.keys(state);
+                let state_keys = Object.keys(state);
                 state_keys.forEach((key) => {
                     state[key] = action.payload[key]
                 });
-                state.role = action.payload.Role;
-                state.avatar = IMAGE_URL(action.payload.Photo) ;
-                state.user_id = action.payload.User;
-                if (action.payload.Role === 3) {
-                    state.airline_code = action.payload.Code
-                    state.airline_name = action.payload.Name
-                }
+                // state.role = action.payload.Role;
+                state.avatar = IMAGE_URL(action.payload.avatar);
+                // if (action.payload.role === 3) {
+                //     state.airline_code = action.payload.code
+                //     state.airline_name = action.payload.name
+                // }
             })
             .addCase(bookFlightAsync.fulfilled, (state, action) => {
                 console.log(action.payload)

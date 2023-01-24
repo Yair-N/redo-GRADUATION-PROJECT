@@ -1,9 +1,9 @@
-from django.urls import include, path
+from django.urls import path
 
 from .views import *
 
 urlpatterns = [
-    path("airlines/", include("geo.urls"), name="airline_ops"),
-    # path("user/", include("users.urls"), name="user_ops"),
-    path("auth/", include("users.auth.urls"), name="authentication"),
+    path("userprofile/", profileDetail, name="profile_detail"),
+    path("upload_image/", uploadPicture, name="profile_detail"),
+    # path("book_flight/<int:flight>/<int:seats>/", book_flight, name="profile_detail"),
 ]

@@ -7,7 +7,7 @@ const initialState = {
     email: "",
     password: "",
     username: "",
-    accessToken: "",
+    // accessToken: "",
     PopupState: false,
     authenticated: false,
     registered: false,
@@ -55,10 +55,12 @@ export const authSlice = createSlice({
             state.PopupState = true
         },
         logOut: (state) => {
-            sessionStorage.removeItem("access_token")
-            sessionStorage.removeItem("refresh_token")
-            state.authenticated = false;
-            state = { ...initialState }
+            sessionStorage.setItem("accessToken",null)
+            sessionStorage.setItem("refreshToken",null)
+            let keys = Object.keys(state);
+            keys.forEach((key) => {
+                state[key] = initialState[key]
+            });
 
         },
         setCredentials: (state, action) => {
@@ -85,12 +87,13 @@ export const authSlice = createSlice({
                 // console.log(action)
             })
             .addCase(LoginAsync.fulfilled, (state, action) => {
-                sessionStorage.setItem("access_token", action.payload.access);
-                sessionStorage.setItem("refresh_token", action.payload.refresh);
+                sessionStorage.setItem("accessToken", action.payload.access);
+                sessionStorage.setItem("refreshToken", action.payload.refresh);
 
                 state.PopupState = false
                 state.authenticated = true
-                state.accessToken = action.payload.access
+                state.password = ''
+                // state.accessToken = action.payload.access
                 // fetchUserPermsAsync(action.payload.access)
             })
             .addCase(registerAsync.fulfilled, (state) => {
@@ -100,13 +103,7 @@ export const authSlice = createSlice({
 
     }
 })
-export const checkUser = () => (dispatch) => {
-    
-    let tok = sessionStorage.getItem("accessToken")
-    if (tok !=='null') {
-        dispatch(setAuth(tok))
-    }
-}
+
 
 // export const user = (state)=> state.user.user;
 export const selectAuth = (state) => state.auth

@@ -13,7 +13,7 @@ export const privateAxios = axios.create({
 });
 
 privateAxios.interceptors.request.use(function (config) {
-    const sessionToken = sessionStorage.getItem("access_token");
+    const sessionToken = sessionStorage.getItem("accessToken");
     if (!config.headers['Authorization']) {
         config.headers['Authorization'] = `Bearer ${sessionToken}`;
     }

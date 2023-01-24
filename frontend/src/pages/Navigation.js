@@ -21,7 +21,7 @@ import Logo from '../components/logo/Logo';
 import AvatarDropDown from '../components/nav/AvatarDropDown'
 
 import { showPopUp, selectAuth, LoginAsync } from '../context/auth/authSlice';
-import { selectUser,getUserAsync } from '../context/user/userSlice';
+import { selectUser, getUserAsync, initUser } from '../context/user/userSlice';
 import SignInPopUp from '../components/popup/SignInPopup';
 
 const Navigation = () => {
@@ -51,31 +51,36 @@ const Navigation = () => {
 
 
     const defPages = () => {
-        if (role === 0) {
-            return anonPages
+        let page = (<></>)
+        switch (role) {
+            case 1:
+                console.log('role:anon')
+                setPages(anonPages)
+                break;
+            case 2:
+                console.log('role:customer')
+                setPages(customerPages)
+                break;
+            case 3:
+                console.log('role:supply')
+                setPages(airlinePages)
+                break;
+            case 4:
+                console.log('role:admin')
+                setPages(adminPages)
+                break;
         }
-        if (role === 2) {
-            return customerPages
-        }
-        if (role === 3) {
-            dispatch(fetchAirlineAsync())
-            return airlinePages
-        }
-        if (role === 1) {
-            return adminPages
-        }
+
     }
 
 
     useEffect(() => {
-        if (authenticated) {
+        if (authenticated)
             dispatch(getUserAsync());
-            console.log('auth')
-        }
     }, [authenticated, avatar])
 
     useEffect(() => {
-        setPages(defPages())
+        defPages()
     } // eslint-disable-next-line
         , [role])
 
