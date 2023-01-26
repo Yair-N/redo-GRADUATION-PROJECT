@@ -10,6 +10,7 @@ import { sessionStorageItems } from './utils/constants';
 import { selectAuth, setAuth } from './context/auth/authSlice';
 import { checkUser } from './context/auth/authSlice';
 import Navigation from './pages/Navigation';
+import Home from './pages/Home';
 import { initiateUserAsync } from './context/user/userSlice';
 
 const App = () => {
@@ -47,8 +48,8 @@ const App = () => {
 
       <Routes>
         <Route path='/' element={<Navigation />}>
-          {/* <Route index element={<FarAway />} />
-        <Route path='/admin' element={<Admin />} />
+          <Route index element={<Home />} />
+        {/* <Route path='/admin' element={<Admin />} />
         <Route path='/flights' element={<FindFlight />} />
         <Route path='/account' element={<Account />} />
         <Route path='/airline' element={<Airline />} />

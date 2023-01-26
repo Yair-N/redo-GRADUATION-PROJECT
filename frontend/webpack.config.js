@@ -46,11 +46,16 @@ module.exports = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(jpe?g|png|gif)$/i,
+                loader: 'file-loader',
+                
             }
         ]
     },
     plugins: [
-        new InterpolateHtmlPlugin({ PUBLIC_URL: '.'}),
+        new InterpolateHtmlPlugin({ PUBLIC_URL: '.' }),
         new HtmlWebpackPlugin({
             inject: true,
             template: path.join(__dirname, '/public/index.html')

@@ -1,0 +1,20 @@
+.section-hero {
+    margin-top: 5%;
+    width: 100%;
+    height: "50rem";
+    max-height: "50%";
+    padding: " 10px";
+    display: "block";
+    flex-direction: "column";
+    justify-content: "center";
+    align-items: "center";
+    color:rgb(52, 152, 219);;
+    background-color: rgb(249, 250, 252);
+    background-image: url(../assets/freedom.jpeg);
+    background-size: "120vw";
+    background-position: "";
+    filter: "blur(3px) opacity(.8) hue-rotate(15deg)";
+    box-shadow: '8px 8px 8px 8px green';
+}
+
+/*# sourceMappingURL=main.css.map */
