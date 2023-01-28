@@ -1,16 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchAirports, fetchCountries } from './staticAPI';
+import { fetchAirports, fetchCountries } from './dataAPI';
 
 
 const initialState = {
     countries: [],
     airports: [],
+    rangedAirports:[],
     airlines: [],
     origin:{},
 };
 
 export const getAirportAsync = createAsyncThunk(
-    "static/airport_list",
+    "data/airport_list",
     async () => {
         const response = await fetchAirports();
         return response.data;
@@ -19,7 +20,7 @@ export const getAirportAsync = createAsyncThunk(
 
 
 export const getCountriesAsync = createAsyncThunk(
-    "static/countries_list",
+    "data/countries_list",
     async () => {
         const response = await fetchCountries();
         return response.data;
@@ -28,8 +29,8 @@ export const getCountriesAsync = createAsyncThunk(
 
 
 
-export const staticSlice = createSlice({
-    name: 'static',
+export const dataSlice = createSlice({
+    name: 'data',
     initialState,
     reducers: {
         initState: (state,) => {
@@ -48,7 +49,13 @@ export const staticSlice = createSlice({
         },
         clearOrigin:(state) =>{
             state.origin = initialState.origin
-        }
+        },
+        setRangedAirports: (state, action) =>{
+            state.rangedAirports = action.payload
+        },
+        clearRangedAirports: (state) =>{
+            state.rangedAirports = []
+        },
 
 
     },
@@ -71,8 +78,8 @@ export const staticSlice = createSlice({
 })
 
 
-export const staticActions = staticSlice.actions
-export const selectStatic = (state) => state.static
-export const selectAirports = (state) => state.static.airports
+export const dataActions = dataSlice.actions
+export const selectData = (state) => state.data
+export const selectAirports = (state) => state.data.airports
 
-export default staticSlice.reducer
+export default dataSlice.reducer

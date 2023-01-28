@@ -54,19 +54,15 @@ const Navigation = () => {
         let page = (<></>)
         switch (role) {
             case 1:
-                console.log('role:anon')
                 setPages(anonPages)
                 break;
             case 2:
-                console.log('role:customer')
                 setPages(customerPages)
                 break;
             case 3:
-                console.log('role:supply')
                 setPages(airlinePages)
                 break;
             case 4:
-                console.log('role:admin')
                 setPages(adminPages)
                 break;
         }

@@ -50,7 +50,7 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif)$/i,
                 loader: 'file-loader',
-                
+
             }
         ]
     },
@@ -61,9 +61,10 @@ module.exports = {
             template: path.join(__dirname, '/public/index.html')
         }),
         new SourceMapDevToolPlugin({
-            filename: "[file].map"
+            filename: '[file].map'
         }),
 
+    ],
+    mode: 'development',
 
-    ]
 }

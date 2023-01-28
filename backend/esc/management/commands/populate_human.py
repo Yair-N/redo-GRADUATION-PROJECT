@@ -21,8 +21,8 @@ class Command(BaseCommand):
             User.objects.create_superuser("yair", "yair.notkovich@gmail.com", "wbstbh")
         except:
             pass
-        super_profile = UserProfile.objects.get_or_create(username="yair")
-        super_profile.avatar = ""
+        super_profile = UserProfile.objects.get(user_id=1)
+        super_profile.avatar = "avatars/kishkashta_Rg4Z7PD.jpg"
         super_profile.role = User_Role.objects.get(id=4)
 
         try:

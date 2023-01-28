@@ -10,7 +10,6 @@ const HeaderBg = ({ children }) => {
         <img src={cloud} alt='second-cloud' className="second cloud" />
         <img src={cloud} alt='second-cloud' className="third cloud" />
         <img src={cloud} alt='second-cloud' className="forth cloud" />
-
         {children}
       </Header>
     </>
@@ -61,6 +60,7 @@ const slideLeftForth = keyframes`
 const Header = styled.header`
 height:90vh;
 width:100%;
+overflow:hidden;
 position:relative;
 & > div.banner{
   position:absolute;
@@ -96,7 +96,6 @@ position:relative;
   top:10vh;
   width:60%;
   animation: ${slideLeftForth} 60s linear infinite;
-
   opacity:.4;
 }
 `

@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+import Fuse from "fuse.js";
+
 import Input from './Input'
 import Suggestions from './Suggestions'
-
-import styled, { ThemeProvider } from 'styled-components'
 import { defaultTheme, defaultFuseOptions } from '../../../conf/autocompletconf'
 
-import useFuse from '../../../hooks/useFuse'
+
+// import useFuse from '../../../hooks/useFuse'
 
 const InputAutocomplete = (
   {
-    items = [],
+    items ,
     fuseOptions = {},
     onSearch = () => { },
     onHover = () => { },
@@ -30,17 +32,20 @@ const InputAutocomplete = (
 
   const theme = { ...defaultTheme, ...style }
   const options = { ...defaultFuseOptions, ...fuseOptions }
+  const itemList = items? items:[]
+  const fuse = new Fuse(itemList, options)
+
   const [searchTerm, setSearchTerm] = useState(inputSearchTerm)
   const [activeSuggestion, setActiveSuggestion] = useState(-1)
   const [activeItem, setActiveItem] = useState({})
-
+  const [suggestions, setSuggestions] = useState([])
   const [selectedItem, setSelectedItem] = useState({})
   const [searchComplete, setSearchComplete] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
   const [hasFocus, setHasFocus] = useState(false)
 
-  const suggestions = useFuse(searchTerm, items, options)
-  const suggestionsLen = maxSuggestions > 0 && maxSuggestions <= suggestions.length ? maxSuggestions : suggestions.length
+
+  const suggestionsLen = maxSuggestions > 0 && maxSuggestions >= suggestions.length > 0 ? maxSuggestions : suggestions.length
 
   useEffect(() => {
     const handleDocumentClick = () => {
@@ -51,6 +56,25 @@ const InputAutocomplete = (
 
     return () => document.removeEventListener('click', handleDocumentClick)
   }, [])
+
+
+  useEffect(() => {
+    switch (searchComplete) {
+      case true:
+        setSuggestions([])
+
+        break
+      case false:
+        if (searchTerm.length > 1) {
+          let results = fuse.search(searchTerm);
+          setSuggestions(results.map(({ item }) => item))
+        }
+        else setSuggestions([])
+
+        break
+    }
+
+  }, [searchTerm, searchComplete])
 
   const reset = () => {
     setSearchTerm(inputSearchTerm)
@@ -67,6 +91,8 @@ const InputAutocomplete = (
     setHasFocus(true)
     onSearch(event)
   }
+
+
 
   const handleClear = () => {
     reset()
@@ -100,6 +126,7 @@ const InputAutocomplete = (
         break
       case 'Escape':
         event.preventDefault()
+        onClear()
         reset()
         break
       default:
@@ -121,11 +148,11 @@ const InputAutocomplete = (
   const stringifySuggestion = (item) => {
     let string = ""
     let element = handleFormatting(item)
-    
+
     if (typeof (element.$$typeof) === 'symbol') {
       let children = element['props']['children']['props']['children']
-      console.log(children,children.length)
-      string = typeof(children)===Array?children.join("").toString():children
+      console.log(children, children.length)
+      string = typeof (children) === Array ? children.join("").toString() : children
     }
     return string
 

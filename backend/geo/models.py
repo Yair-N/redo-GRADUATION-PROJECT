@@ -22,7 +22,7 @@ class Airport(models.Model):
     name = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=False)
-    # country_name = models.CharField(max_length=20)
+    country_code = models.CharField(max_length=3, default="NON", null=True)
     lat_decimal = models.FloatField()
     lon_decimal = models.FloatField()
 
@@ -31,6 +31,7 @@ class Airport(models.Model):
 
     def save(self, *args, **kwargs):
         self.display_name = f"{self.iata_code}|{self.country.name}|{self.city}"
+        self.country_code = f"{self.country.code}"
         return super().save(*args, **kwargs)
 
     def __str__(self):

@@ -27,6 +27,6 @@ export const defaultTheme = {
 export const defaultFuseOptions = {
     shouldSort: true,
     threshold: 0.4,
-    location: 0,
+    // location: 0,
     minMatchCharLength: 2,
 }

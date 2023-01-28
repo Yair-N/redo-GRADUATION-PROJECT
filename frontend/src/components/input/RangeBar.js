@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 import { Slider } from '@mui/material'
 
-const RangeBar = () => {
+const RangeBar = (props,
+    {
+        onChange = () => { null },
+        onMouseUp = () => { null },
+    }) => {
+
+    const [value, setValue] = useState(0)
+
+    const handleChange = (event) => {
+        event.preventDefault()
+        setValue(event.target.value)
+        onChange()
+        console.log(value)
+    }
+
+    const handleMouseUp = (event) => {
+
+        onMouseUp()
+
+    }
     return (
-        <RangeSlider>RangeBar</RangeSlider>
+        <RangeSlider
+            value={value}
+            onChange={(event) => handleChange(event)}
+            onMouseUp={(event) => handleMouseUp(event)}
+            {...props} />
     )
 }
 
@@ -16,13 +39,15 @@ export default RangeBar
 
 
 const RangeSlider = styled(Slider)({
-    position:'absolute',
-    zIndex:'0',
-
+    position: 'absolute',
     color: props => props.theme.pallette.primary.main,
+    transform: 'translate(-14px)',
     height: 8,
+
     '& .MuiSlider-track': {
         border: 'none',
+
+
     },
     '& .MuiSlider-thumb': {
         height: 24,
@@ -54,5 +79,8 @@ const RangeSlider = styled(Slider)({
         '& > *': {
             transform: 'rotate(45deg)',
         },
+    },
+    '& .MuiSlider-mark': {
+        display: 'none',
     },
 });

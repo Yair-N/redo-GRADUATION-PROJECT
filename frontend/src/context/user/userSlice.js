@@ -27,7 +27,6 @@ export const initiateUserAsync = createAsyncThunk(
 
     async () => {
         await initUser();
-        console.log('signed out')
 
     }
 );
@@ -36,7 +35,6 @@ export const getUserAsync = createAsyncThunk(
     "user/get_profile",
     async () => {
         const response = await getUserProfile()
-        console.log(response.data)
         return response.data;
     }
 );
@@ -47,7 +45,6 @@ export const uploadPictureAsync = createAsyncThunk(
         const form = new FormData();
         form.append('Photo', file, file.name)
         const response = await uploadPicture(form)
-        console.log(response)
         return response.data;
     }
 )
@@ -57,7 +54,6 @@ export const bookFlightAsync = createAsyncThunk(
     async (flight, seats) => {
 
         const response = await bookFlight(flight)
-        console.log(response)
         return response.data;
     }
 )
@@ -88,7 +84,6 @@ export const userSlice = createSlice({
             let keys = Object.keys(state);
             keys.forEach((key) => {
                 state[key] = action.payload[key]
-                console.log(state[key])
             });
             state.avatar = IMAGE_URL(action.payload.avatar)
 
@@ -117,7 +112,6 @@ export const userSlice = createSlice({
                 state.avatar = action.payload.Photo
             })
             .addCase(updateUserAsync.fulfilled, (state, action) => {
-                console.log(action.payload)
             })
             .addCase(getUserAsync.fulfilled, (state, action) => {
 

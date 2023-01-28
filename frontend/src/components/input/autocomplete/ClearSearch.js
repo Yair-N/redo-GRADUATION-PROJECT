@@ -72,7 +72,7 @@ margin: ${props => props.theme.iconMargin};
     &:hover {
         cursor:${props => props?.id === 'clearIcon' ? 'pointer' : 'text'}
         }
-}
+
 
 
 > svg {

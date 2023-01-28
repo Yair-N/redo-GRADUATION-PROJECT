@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
-import { theme } from './theme';
+import { theme } from './conf';
 import { sessionStorageItems } from './utils/constants';
 
-import { getAirportAsync, getCountriesAsync ,staticActions } from './context/static/staticSlice';
+import { getAirportAsync, getCountriesAsync, dataActions } from './context/data/dataSlice';
 import { selectAuth, setAuth } from './context/auth/authSlice';
 import Navigation from './pages/Navigation';
 import Home from './pages/Home';
@@ -20,10 +20,9 @@ const App = () => {
   const [token, setToken] = useState('null')
 
   useEffect(() => {
-    const syncStorage =() => {
+    const syncStorage = () => {
 
       Object.entries(sessionStorageItems).forEach(([key, value]) => {
-        console.log(key, value)
         if (sessionStorage.getItem(value) === null) {
           switch (value) {
             case sessionStorageItems.accessToken:
@@ -46,7 +45,7 @@ const App = () => {
 
     syncStorage()
     setToken(sessionStorage.getItem('accessToken'))
-    dispatch(staticActions.getItems())
+    dispatch(dataActions.getItems())
 
   }, []);
 
