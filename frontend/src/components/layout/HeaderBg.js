@@ -2,13 +2,16 @@ import styled, { keyframes } from 'styled-components'
 import React from 'react'
 import cloud from '../../assets/globe-clouds.png'
 
-const HeaderBg = () => {
+const HeaderBg = ({ children }) => {
   return (
     <>
       <Header><div className='banner' />
         <img src={cloud} alt='first cloud' className="first cloud " />
         <img src={cloud} alt='second-cloud' className="second cloud" />
         <img src={cloud} alt='second-cloud' className="third cloud" />
+        <img src={cloud} alt='second-cloud' className="forth cloud" />
+
+        {children}
       </Header>
     </>
   )
@@ -42,6 +45,16 @@ const slideLeftThird = keyframes`
 
   to {
     left:-120%;
+  }
+`;
+
+const slideLeftForth = keyframes`
+  from {
+    left:200%;
+  }
+
+  to {
+    left:-200%;
   }
 `;
 
@@ -79,6 +92,13 @@ position:relative;
   animation: ${slideLeftThird} 90s linear infinite;
 }
 
+& > img.forth{
+  top:10vh;
+  width:60%;
+  animation: ${slideLeftForth} 60s linear infinite;
+
+  opacity:.4;
+}
 `
 
 

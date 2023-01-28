@@ -23,3 +23,9 @@ export const USER_URL = {
     CREATE_PROFILE: "/user/create_profile/",
     UPLOAD_IMAGE: "/user/upload_image/"
 }
+
+export const STATIC_URL = {
+    COUNTRIES_LIST: "https://restcountries.com/v2/all",
+    AIRPORTS_LIST: "/data/airport_list/",
+    AIRLINES_LIST: "/data/airline_list/",
+}

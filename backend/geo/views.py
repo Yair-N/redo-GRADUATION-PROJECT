@@ -1,30 +1,37 @@
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test
-from .models import FlightRoute
+from .models import *
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.parsers import JSONParser
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .serializers import (
-    AirlineSerializer,
-    FlattenedFlightRoutesSerializer,
-    FlightRouteSerializer,
-)
+from .serializers import *
 
 # Create your views here.
-model_serializer = AirlineSerializer
-model = model_serializer.Meta.model
+airline_serializer = AirlineSerializer
+airline_model = airline_serializer.Meta.model
+
+airport_serializer = AirportSerializer
+airport_model = AirportSerializer.Meta.model
+
+
+@api_view(["GET"])
+def airport_list(request):
+    # get all objects in the model airport_model
+    result = airport_model.objects.all()
+    serialized = airport_serializer(result, many=True)
+    return Response(serialized.data)
 
 
 @api_view(["GET"])
 def airline_list(request):
 
     # get all objects in the model airline_companies
-    result = model.objects.all()
-    serialized = model_serializer(result, many=True)
+    result = airline_model.objects.all()
+    serialized = airline_serializer(result, many=True)
     return Response(serialized.data)
 
 
@@ -41,14 +48,14 @@ def airline_routes(request):
     if "airline" in keys:
 
         try:
-            obj = model.objects.get(code=params["airline"])
+            obj = airline_model.objects.get(code=params["airline"])
             Response(status=status.HTTP_302_FOUND)
 
-        except model.DoesNotExist:
+        except airline_model.DoesNotExist:
 
             return Response(
                 {
-                    "message": f"The {model._meta.verbose_name} you searched does not exist"
+                    "message": f"The {airline_model._meta.verbose_name} you searched does not exist"
                 },
                 status=status.HTTP_404_NOT_FOUND,
             )
@@ -67,11 +74,11 @@ def airline_routes(request):
                     code__iexact=f'{params["from"]}-{params["to"]}'
                 )
                 print(f'{params["from"]}-{params["to"]}')
-            except model.DoesNotExist:
+            except airline_model.DoesNotExist:
 
                 return Response(
                     {
-                        "message": f"The {model._meta.verbose_name} you searched does not exist"
+                        "message": f"The {airline_model._meta.verbose_name} you searched does not exist"
                     },
                     status=status.HTTP_404_NOT_FOUND,
                 )
@@ -81,11 +88,11 @@ def airline_routes(request):
                     code__istartswith=params["from"]
                 )
 
-            except model.DoesNotExist:
+            except airline_model.DoesNotExist:
 
                 return Response(
                     {
-                        "message": f"The {model._meta.verbose_name} you searched does not exist"
+                        "message": f"The {airline_model._meta.verbose_name} you searched does not exist"
                     },
                     status=status.HTTP_404_NOT_FOUND,
                 )

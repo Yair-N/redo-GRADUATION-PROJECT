@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Children } from 'react'
 import styled from 'styled-components'
 
-const Hero = () => {
+const Hero = ({ children }) => {
     return (
         <HeroSection>
-            
+            { children }
         </HeroSection>
     )
 }
@@ -13,11 +13,14 @@ export default Hero
 
 const HeroSection = styled.div`
 position:absolute;
+z-index:5;
+
 display:flex;
 flex-direction:column;
 top:15vh;
 left:50%;
 margin:10px 10px 10px 10px;
+padding:30px;
 width:100%;
 height:100%;
 min-height:400px;

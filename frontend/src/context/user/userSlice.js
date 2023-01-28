@@ -90,12 +90,7 @@ export const userSlice = createSlice({
                 state[key] = action.payload[key]
                 console.log(state[key])
             });
-            // state.username = action.payload.username
-            // state.role = action.payload.role
             state.avatar = IMAGE_URL(action.payload.avatar)
-            // state.profile_id = action.payload.id
-            // state.user_id = action.payload.user
-            // // console.log('base user', action.payload)
 
         },
         initUser: (state) => {
@@ -130,12 +125,7 @@ export const userSlice = createSlice({
                 state_keys.forEach((key) => {
                     state[key] = action.payload[key]
                 });
-                // state.role = action.payload.Role;
                 state.avatar = IMAGE_URL(action.payload.avatar);
-                // if (action.payload.role === 3) {
-                //     state.airline_code = action.payload.code
-                //     state.airline_name = action.payload.name
-                // }
             })
             .addCase(bookFlightAsync.fulfilled, (state, action) => {
                 console.log(action.payload)

@@ -1,17 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { Routes, Route } from 'react-router-dom';
-
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { theme } from './theme';
 import { sessionStorageItems } from './utils/constants';
 
+import { getAirportAsync, getCountriesAsync ,staticActions } from './context/static/staticSlice';
 import { selectAuth, setAuth } from './context/auth/authSlice';
-import { checkUser } from './context/auth/authSlice';
 import Navigation from './pages/Navigation';
 import Home from './pages/Home';
-import { initiateUserAsync } from './context/user/userSlice';
 
 const App = () => {
 
@@ -22,15 +20,33 @@ const App = () => {
   const [token, setToken] = useState('null')
 
   useEffect(() => {
-    const syncStorage = () => {
-      sessionStorageItems.map(title => {
-        if (sessionStorage.getItem(title) === null) {
-          sessionStorage.setItem(title, null)
+    const syncStorage =() => {
+
+      Object.entries(sessionStorageItems).forEach(([key, value]) => {
+        console.log(key, value)
+        if (sessionStorage.getItem(value) === null) {
+          switch (value) {
+            case sessionStorageItems.accessToken:
+              sessionStorage.setItem(value, null)
+              break
+            case sessionStorageItems.refreshToken:
+              sessionStorage.setItem(value, null)
+              break
+            case sessionStorageItems.airports:
+              dispatch(getAirportAsync())
+              break
+            case sessionStorageItems.countries:
+              dispatch(getCountriesAsync())
+              break
+          }
         }
       })
     }
+
+
     syncStorage()
     setToken(sessionStorage.getItem('accessToken'))
+    dispatch(staticActions.getItems())
 
   }, []);
 
@@ -49,7 +65,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Navigation />}>
           <Route index element={<Home />} />
-        {/* <Route path='/admin' element={<Admin />} />
+          {/* <Route path='/admin' element={<Admin />} />
         <Route path='/flights' element={<FindFlight />} />
         <Route path='/account' element={<Account />} />
         <Route path='/airline' element={<Airline />} />

@@ -1,40 +1,61 @@
-import { React, useRef, useEffect } from 'react'
-import { StyledInput } from './input/styled_input'
-import { ReactComponent as CancelIcon } from "./cancel-cross-svgrepo-com.svg";
-import styled from "styled-components";
+import React, { useRef } from 'react'
+import styled from 'styled-components'
+import ClearSearch from './ClearSearch'
 
 const Input = (
-    { onKeyDown, onCancel, placeholder, searchTerm, setSearchTerm, onChange },
-) => {
-
-    const handleClear = () => {
-
-        setSearchTerm('')
+    {
+        searchTerm,
+        setSearchTerm,
+        onChange,
+        onKeyDown = () => { },
+        autoFocus,
+        onFocus = () => { },
+        handleClear,
+        placeholder,
+        inputSearchTerm,
     }
 
-    return (
+) => {
 
-        <StyledInput >
+    const inputRef = useRef(null)
+
+    let manualFocus = true
+
+    const handleOnFocus = (event) => {
+        manualFocus && onFocus(event)
+    }
+
+
+    const setFocus = () => {
+        manualFocus = false
+        inputRef?.current && inputRef.current.focus()
+        manualFocus = true
+    }
+
+
+    return (
+        <InputWrapper>
+
             <input
-                spellCheck={false}
-                placeholder={placeholder}
+                ref={inputRef}
                 type={'text'}
+                spellCheck={false}
+                autoFocus={autoFocus}
+                placeholder={placeholder}
                 value={searchTerm}
                 onChange={onChange}
-                onKeyDown={onKeyDown}
+                onFocus={handleOnFocus}
+                onKeyDown={(event) => onKeyDown(event)}
             />
 
-            <CancelIcon
-                style={searchTerm?.length > 0 ? { display: 'block' } : { display: 'none' }}
-                type='button'
-                width={20}
-                height={20}
-                focusable="false"
-                onClick={handleClear}
+            <ClearSearch
+                setSearchTerm={setSearchTerm}
+                searchTerm={searchTerm}
+                setFocus={setFocus}
+                handleClear={handleClear}
+                inputSearchTerm={inputSearchTerm}
             />
-
-
-        </StyledInput>
+        </InputWrapper>
     )
 }
 
@@ -42,45 +63,36 @@ export default Input
 
 
 
+const InputWrapper = styled.div`
 
-const StyledInput = styled.div`
+min-height: ${props => props.theme?.height};
+display: flex;
+align-items: center;
 
-            display: flex;
-            align-items: center;
-            width: 100%;
-            border: 2px solid gainsboro;
-            border-radius: 4px;
-            font-size: 1.2rem;
-            z-index: 10;
-            background: transparent;
-            > input {
-                width: 100%;
-            
-                padding: 0 0 0 13px;
-            
-                border: none;
-                outline: none;
-            
-                background-color: rgba(0, 0, 0, 0);
-                font-size: inherit;
-                font-family: inherit;
-            
-                color: ${(props) => props.color};
-            
-                ::placeholder {
-                  color: ${(props) => props.placeholderColor};
-                  opacity: 1;
-            
-                  :-ms-input-placeholder {
-                    color: ${(props) => props.placeholderColor};
-                  }
-            
-                  ::-ms-input-placeholder {
-                    color: ${(props) => props.placeholderColor};
-                  }}
-            &:focus {
-                outline: none;
-            border-color: lightblue;
-            box-shadow: 0 0 4px lightblue;
-  }}
-            `
+> input {
+    width: 100%;
+
+    padding: 0 0 0 13px;
+
+    border: none;
+    outline: none;
+
+    background-color: ${props => props.theme.inputBackground};
+    font-size: ${props => props.theme.fontSize};
+    font-family: ${props => props.theme.fontFamily} 
+
+    color: ${props => props.theme.color};
+
+::placeholder {
+    opacity: 1;
+    color: ${props => props.theme?.placeholderColor};
+    :-ms-input-placeholder {
+        color: ${props => props.theme?.placeholderColor};
+    }
+
+    ::-ms-input-placeholder {
+        color: ${props => props.theme?.placeholderColor};
+    }
+}
+}
+`

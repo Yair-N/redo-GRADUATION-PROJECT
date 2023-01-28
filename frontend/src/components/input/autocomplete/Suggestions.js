@@ -1,99 +1,121 @@
-import { React, useRef, useEffect } from 'react'
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-
-
-const Suggestions = (
-    {
-
-        searchTerm = '',
-        onFocus = () => { },
-        options,
-        items,
-        suggestionFormat,
-        handle_selection,
-        suggestions,
-        activaItem,
-        setSuggestionString,
-        setSelectedObject,
-
-    }
-
+const Suggestions = ({
+    onHover,
+    onClick,
+    handleActiveSuggestion,
+    suggestions = [],
+    suggestionsLen,
+    activeSuggestion,
+    formatSuggestions,
+    searchComplete,
+}
 ) => {
 
-    const ref = useRef(null)
 
-    useEffect(() => {
-        const updateSelection = (suggestions) => {
-            if (suggestions?.length > 0 && activaItem > -1) {
-                setSelectedObject(suggestions[activaItem])
-                let element = suggestionFormat(suggestions[activaItem])
-                let string = element['props']['children']['props']['children'].join("").toString()
-                setSuggestionString(string)
-            }
+
+    const handleClick = (event, item) => {
+        onClick(event, item)
+    }
+
+
+    const handleMouseDown = (event, item) => {
+        if (event.button === 0) {
+            event.preventDefault()
+            handleClick(event, item)
         }
+    }
 
-        return updateSelection(suggestions)
+    const handleMouseEnter = (event, index) => {
+        event.preventDefault()
+        handleActiveSuggestion(index)
+        onHover(event)
+    }
 
-    }, [activaItem])
+
+    if (suggestions.length === 0 || searchComplete) {
+        return null
+    }
+    else
+        return (
+            <SuggestionsWrapper >
+                <div className="line" />
+                <ul>
+                    {suggestions.slice(0, suggestionsLen).map((item, index) => {
 
 
+                        return (
+                            <li
+                                className={activeSuggestion === index ? 'is_active' : ''}
+                                onMouseEnter={(event) => handleMouseEnter(event, index, item)}
+                                key={`suggestion-${index}`}
+                                onMouseDown={(event) => handleMouseDown(event, item)}
+                                onClick={() => handleClick(item)}
+                            >
+                                <div
+                                    className="ellipsis"
+                                    title={item[Object.keys(item)[0]]}
+                                >
+                                    {formatSuggestions(item)}
+                                </div>
+                            </li>
 
+                        )
+                    })}
+                </ul>
+            </SuggestionsWrapper >
 
-    return (
-        <SuggestionsContainer >
-            <SuggestionsDropdown
-                show={searchTerm.length > 0 && suggestions.length > 0}
-            >
-                <List ref={ref}
-                >
+        )
 
-                    {suggestions.map((item, index) => (
-                        <SuggestionItem
-                            index={index}
-                            active={activaItem}
-                            key={index}>{suggestionFormat(item)}</SuggestionItem>
-                    ))}
-                </List>
-            </SuggestionsDropdown>
-        </SuggestionsContainer>
-    )
 }
 
 export default Suggestions
 
 
+const SuggestionsWrapper = styled.div`
+  > div.line {
+    border-top-color: ${props => props.theme.lineColor};
+    border-top-style: solid;
+    border-top-width: 1px;
 
+    margin-bottom: 0px;
+    margin-left: 14px;
+    margin-right: 20px;
+    margin-top: 0px;
 
-const SuggestionsContainer = styled.div`
-            position: relative;
-            `;
-
-const SuggestionsDropdown = styled.div`
-            position: absolute;
-            width: 100%;
-            border: 2px solid gainsboro;
-            border-radius: 4px;
-            margin-top: 2px;
-            box-sizing: border-box;
-            display: ${({ show }) => (show ? "block" : "none")};
-            `;
-
-
-const List = styled.ol`
-            list-style: none;
-            text-align: start;
-            font-size: 1.1rem;
-            padding: 0;
-            margin: 0;
-            `;
-
-const SuggestionItem = styled.li`
-            padding: 1.1rem;
-            transition: all 250ms ease-in-out;
-            background:${(props) => (props.active === props.index ? '#cccccc' : 'inherit')};
-            &:hover {
-                background: #cccccc;
+    padding-bottom: 4px;
   }
-  
-            `;
+
+  > ul {
+    z-index:2;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0 16px 0;
+    max-height: ${props => props.theme.maxHeight};
+   
+
+
+    > li {
+    display: flex;
+    align-items: center;
+    padding: 4px 0 4px 0;
+
+    > div {
+    margin-left: 13px;
+      }
+    }
+  }
+
+  .ellipsis {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .is_active {
+    background-color: ${props => props.theme.hoverBackgroundColor};
+  }
+`

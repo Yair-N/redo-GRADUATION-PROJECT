@@ -6,8 +6,9 @@ import HowFar from '../screens/HowFar'
 const Home = () => {
   return (
     <>
-      <HeaderBg />
-      <HowFar />
+      <HeaderBg>
+        <HowFar />
+      </HeaderBg>
     </>
   )
 }

@@ -1,4 +1,3 @@
-from django.contrib.auth import get_user_model
 from rest_framework.serializers import ModelSerializer
 
 from .models import *
@@ -19,4 +18,10 @@ class FlightRouteSerializer(ModelSerializer):
 class FlattenedFlightRoutesSerializer(ModelSerializer):
     class Meta:
         model = FlattenedFlightRoutes
+        fields = "__all__"
+
+
+class AirportSerializer(ModelSerializer):
+    class Meta:
+        model = Airport
         fields = "__all__"
