@@ -34,17 +34,48 @@ export const calcDistanceList = (origin, listOfObjects) => {
 
 // will return a list of grouped locations by distance from origin
 export const groupByDistance = (origin, listOfObjects, division = 100, range = 20000) => {
-    if (range === 0 || range === division || division < 100||listOfObjects.length < 1)
+    if (range === 0 || range === division || division < 100 || listOfObjects.length < 1)
         return [];
     const list = calcDistanceList(origin, listOfObjects)
     const intervals = range / division
-    let groupedList = []
+    let groupedAirport = []
     let key = division
 
     for (let i = 1; i < intervals; i++) {
-        groupedList = { ...groupedList, [key]: list.filter(obj => obj.distance <= key && obj.distance > key - division) }
+        groupedAirport = {
+            ...groupedAirport,
+            [key]: list.filter(obj => (obj.distance <= key) && (obj.distance > key - division))
+        }
+
         key += division
+
     }
 
-    return groupedList
+    return groupedAirport
+}
+
+
+
+// will return a list of grouped locations by distance from origin
+export const groupCountriesByDistance = (origin, listOfObjects, division = 100, range = 20000) => {
+    if (range === 0 || range === division || division < 100 || listOfObjects.length < 1)
+        return [];
+    const list = calcDistanceList(origin, listOfObjects)
+    const intervals = range / division
+    let groupedCountries = []
+    let key = division
+
+    for (let i = 1; i < intervals; i++) {
+        let group = new Set()
+        list.filter(obj => (obj.distance <= key) && (obj.distance > key - division)&&group.add(obj.country_code))
+        groupedCountries = {
+            ...groupedCountries,
+            [key]: Array.from(group.values())
+        }
+
+        key += division
+
+    }
+
+    return groupedCountries
 }

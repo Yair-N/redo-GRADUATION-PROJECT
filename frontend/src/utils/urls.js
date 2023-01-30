@@ -24,8 +24,9 @@ export const USER_URL = {
     UPLOAD_IMAGE: "/user/upload_image/"
 }
 
-export const STATIC_URL = {
-    COUNTRIES_LIST: "https://restcountries.com/v2/all",
+export const DATA_URL = {
+    FULL_COUNTRIES_LIST: "https://restcountries.com/v2/all",
     AIRPORTS_LIST: "/data/airport_list/",
     AIRLINES_LIST: "/data/airline_list/",
+    COUNTRIES_LIST:"/data/country_list/"
 }

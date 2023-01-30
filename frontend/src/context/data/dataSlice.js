@@ -4,6 +4,7 @@ import { fetchAirports, fetchCountries } from './dataAPI';
 
 const initialState = {
     countries: [],
+    extendedCountries:[],
     airports: [],
     rangedAirports:[],
     airlines: [],

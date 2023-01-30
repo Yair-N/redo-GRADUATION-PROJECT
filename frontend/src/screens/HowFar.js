@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { useTheme } from '@mui/material/styles';
 
+import { debounce } from '@mui/material';
 import Hero from '../components/layout/Hero'
 import RangeBar from '../components/input/RangeBar'
 import InputAutocomplete from '../components/input/autocomplete/InputAutocomplete'
 import RangeGraph from '../components/charts/RangeGraph'
 
 import { selectAirports, dataActions } from '../context/data/dataSlice';
-import { calcDistanceList, groupByDistance } from '../utils/geoCalc'
+import { groupCountriesByDistance, groupByDistance } from '../utils/geoCalc'
 
 
 
@@ -26,42 +28,49 @@ const HowFar = () => {
             data: [],
         },
     };
-
+    const theme = useTheme()
     const [airports, setAirports] = useState({})
+    const [countries, setCountries] = useState({})
+
     const [isOrigin, setIsOrigin] = useState(false)
     const [origin, setOrigin] = useState({})
     const [chartData, setChartData] = useState(data)
     const [marks, setMarks] = useState([])
+    const [thumbValue, setThumbValue] = useState([])
+
     const range = 20000
     const jumps = 100
 
     useEffect(() => {
         const handleCalcDistance = async () => {
-            setAirports(groupByDistance(origin, airportList, jumps, range))
+            setCountries(groupCountriesByDistance(origin, airportList, jumps, range))
+
         }
         if (origin !== {}) {
             handleCalcDistance()
         }
     }, [origin])
 
+
     useEffect(() => {
         let marksArr = []
-        if (airports !== {} && airports !== []) {
-            data.labels = Object.keys(airports)
+        if (countries !== {} && countries !== []) {
+            data.labels = Object.keys(countries)
             data.datasets = [
                 {
                     data: data.labels.map(label => {
-                        airports[label].length > 0 && marksArr.push({value:parseInt(label)})
-                        return airports[label].length
+                        countries[label].length > 0 && marksArr.push({ value: parseInt(label) })
+                        return countries[label].length
                     }),
-                    backgroundColor: `#3498DB`
+                    backgroundColor: '#3498DB',
                 }
 
             ]
             setMarks(marksArr)
             setChartData(data)
         }
-    }, [airports])
+    }, [countries])
+
 
     const onSearch = (event) => {
         // console.log('search', event)
@@ -77,8 +86,12 @@ const HowFar = () => {
     const onFocus = (event) => {
         // console.log('focus', event)
     }
+
     const onClear = () => {
+
         dispatch(dataActions.clearOrigin())
+        setThumbValue(0)
+
         setIsOrigin(false)
     }
 
@@ -92,6 +105,11 @@ const HowFar = () => {
             </>
         )
 
+    }
+
+
+    const handleSelectedRange = (val) => {
+        debounce(setThumbValue(val), 200)
     }
 
 
@@ -111,28 +129,29 @@ const HowFar = () => {
                     formatSuggestions={formatSuggestions}
                     items={airportList}
                     placeholder={'Find an airport by country, city, name or code'}
-                    fuseOptions={{ keys: ['display_name', 'city', 'name'] }}
-
+                    fuseOptions={{ keys: ['display_name', 'name',] }}
                 />
             </InputContainer>
-            <HowFarWrapper >
 
+            <HowFarWrapper >
                 <span>
                     How far Would you like to travel?
                 </span>
                 <InputContainer >
                     <RangeBar
-                        valueLabelDisplay="auto"
                         disabled={!isOrigin}
                         step={null}
                         max={range}
                         marks={marks}
+                        handleSelectedRange={handleSelectedRange}
                     />
                 </InputContainer>
                 <GraphContainer>
                     <RangeGraph
+                        id={'graph'}
                         isActive={isOrigin && airports !== []}
-                        data={chartData} />
+                        data={chartData}
+                    />
                 </GraphContainer>
             </HowFarWrapper>
 
@@ -152,12 +171,13 @@ justify-content:center;
 `
 const GraphContainer = styled.div`
 width:100%;
-height:3rem;
+height:5rem;
 position:relative;
 align-items:center;
 justify-content:center;
 padding-top:.5rem;
-padding-left:6px;
+margin-left:6px;
+
 `
 const HowFarWrapper = styled.div`
 

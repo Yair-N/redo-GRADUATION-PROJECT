@@ -79,7 +79,7 @@ align-items: center;
 
     background-color: ${props => props.theme.inputBackground};
     font-size: ${props => props.theme.fontSize};
-    font-family: ${props => props.theme.fontFamily} 
+    font-family: ${props => props.theme.fontFamily} ;
 
     color: ${props => props.theme.color};
 

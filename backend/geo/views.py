@@ -15,23 +15,39 @@ airline_serializer = AirlineSerializer
 airline_model = airline_serializer.Meta.model
 
 airport_serializer = AirportSerializer
-airport_model = AirportSerializer.Meta.model
+airport_model = airport_serializer.Meta.model
+
+country_serializer = CountrySerializer
+country_model = country_serializer.Meta.model
 
 
 @api_view(["GET"])
 def airport_list(request):
     # get all objects in the model airport_model
-    result = airport_model.objects.all()
-    serialized = airport_serializer(result, many=True)
+    serializer = AirportSerializer
+    model = serializer.Meta.model
+    result = model.objects.all()
+    serialized = serializer(result, many=True)
+    return Response(serialized.data)
+
+
+@api_view(["GET"])
+def countries_list(request):
+    # get all objects in the model airport_model
+    serializer = CountrySerializer
+    model = serializer.Meta.model
+    result = model.objects.all()
+    serialized = serializer(result, many=True)
     return Response(serialized.data)
 
 
 @api_view(["GET"])
 def airline_list(request):
 
-    # get all objects in the model airline_companies
-    result = airline_model.objects.all()
-    serialized = airline_serializer(result, many=True)
+    serializer = AirlineSerializer
+    model = serializer.Meta.model
+    result = model.objects.all()
+    serialized = serializer(result, many=True)
     return Response(serialized.data)
 
 

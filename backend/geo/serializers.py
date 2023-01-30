@@ -25,3 +25,9 @@ class AirportSerializer(ModelSerializer):
     class Meta:
         model = Airport
         fields = "__all__"
+
+
+class CountrySerializer(ModelSerializer):
+    class Meta:
+        model = Country
+        fields = "__all__"

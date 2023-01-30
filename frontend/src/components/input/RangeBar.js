@@ -1,33 +1,40 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from '@emotion/styled'
 import { Slider } from '@mui/material'
+import { useTheme } from '@mui/material'
+import { debounce } from '@mui/material'
 
-const RangeBar = (props,
+const RangeBar = (
+
     {
-        onChange = () => { null },
-        onMouseUp = () => { null },
-    }) => {
+        handleSelectedRange,
+        disabled,
+        step,
+        max,
+        marks,
+    }
+) => {
 
-    const [value, setValue] = useState(0)
 
-    const handleChange = (event) => {
-        event.preventDefault()
-        setValue(event.target.value)
-        onChange()
-        console.log(value)
+
+    const handleCommit = (event, newValue) => {
+        handleSelectedRange(newValue)
     }
 
-    const handleMouseUp = (event) => {
-
-        onMouseUp()
-
-    }
     return (
-        <RangeSlider
-            value={value}
-            onChange={(event) => handleChange(event)}
-            onMouseUp={(event) => handleMouseUp(event)}
-            {...props} />
+        <div>
+            <RangeSlider
+                disabled={disabled}
+                defaultValue={0}
+                step={step}
+                max={max}
+                marks={marks}
+                aria-label='Range'
+                onChangeCommitted={handleCommit}
+                valueLabelDisplay="auto"
+                track={false}
+            />
+        </div>
     )
 }
 
@@ -38,9 +45,9 @@ export default RangeBar
 
 
 
-const RangeSlider = styled(Slider)({
+const RangeSlider = styled(Slider)(({ theme }) => ({
     position: 'absolute',
-    color: props => props.theme.pallette.primary.main,
+    color: theme.palette.primary.main,
     transform: 'translate(-14px)',
     height: 8,
 
@@ -63,13 +70,14 @@ const RangeSlider = styled(Slider)({
     },
     '& .MuiSlider-valueLabel': {
         lineHeight: 1.2,
-        fontSize: 12,
+        fontSize: 13,
         background: 'unset',
         padding: 0,
-        width: 32,
-        height: 32,
+        width: 42,
+        height: 42,
         borderRadius: '50% 50% 50% 0',
-        backgroundColor: props => props.theme.pallette.primary.main,
+        backgroundColor: theme.palette.primary.main,
+
         transformOrigin: 'bottom left',
         transform: 'translate(50%, -100%) rotate(-45deg) scale(0)',
         '&:before': { display: 'none' },
@@ -83,4 +91,4 @@ const RangeSlider = styled(Slider)({
     '& .MuiSlider-mark': {
         display: 'none',
     },
-});
+}));

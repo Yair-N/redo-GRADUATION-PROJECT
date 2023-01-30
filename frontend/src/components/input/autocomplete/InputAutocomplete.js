@@ -11,7 +11,7 @@ import { defaultTheme, defaultFuseOptions } from '../../../conf/autocompletconf'
 
 const InputAutocomplete = (
   {
-    items ,
+    items,
     fuseOptions = {},
     onSearch = () => { },
     onHover = () => { },
@@ -32,7 +32,7 @@ const InputAutocomplete = (
 
   const theme = { ...defaultTheme, ...style }
   const options = { ...defaultFuseOptions, ...fuseOptions }
-  const itemList = items? items:[]
+  const itemList = items ? items : []
   const fuse = new Fuse(itemList, options)
 
   const [searchTerm, setSearchTerm] = useState(inputSearchTerm)
@@ -45,7 +45,7 @@ const InputAutocomplete = (
   const [hasFocus, setHasFocus] = useState(false)
 
 
-  const suggestionsLen = maxSuggestions > 0 && maxSuggestions >= suggestions.length > 0 ? maxSuggestions : suggestions.length
+  const suggestionsLen = maxSuggestions > 0 && maxSuggestions <= suggestions.length > 0 ? maxSuggestions : suggestions.length
 
   useEffect(() => {
     const handleDocumentClick = () => {

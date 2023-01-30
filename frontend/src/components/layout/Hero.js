@@ -1,5 +1,6 @@
-import React, { Children } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { Box } from '@mui/material'
 
 const Hero = ({ children }) => {
     return (
@@ -11,7 +12,7 @@ const Hero = ({ children }) => {
 
 export default Hero
 
-const HeroSection = styled.div`
+const HeroSection = styled(Box)`
 position:absolute;
 z-index:5;
 
