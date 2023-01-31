@@ -7,7 +7,8 @@ const Logo = () => {
     return (
         <Box
             sx={{
-                marginRight: 3,
+                // marginRight: 3,
+                margin: '.5rem',
                 width: 50,
                 height: 50,
                 backgroundColor: 'inherit',

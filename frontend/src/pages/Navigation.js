@@ -20,10 +20,14 @@ import NavContainer from '../components/nav/NavContainer';
 import Logo from '../components/logo/Logo';
 import AvatarDropDown from '../components/nav/AvatarDropDown'
 
+
 import { showPopUp, selectAuth, LoginAsync } from '../context/auth/authSlice';
 import { selectUser, getUserAsync, initUser } from '../context/user/userSlice';
 import SignInPopUp from '../components/popup/SignInPopup';
 
+import EscSVG from '../assets/esc.svg';
+import InSVG from '../assets/LinkedIn_icon_circle.svg'
+import Icon from '../components/layout/Icon';
 const Navigation = () => {
 
     const dispatch = useDispatch()
@@ -77,7 +81,7 @@ const Navigation = () => {
 
     useEffect(() => {
         defPages()
-    } // eslint-disable-next-line
+    }
         , [role])
 
     useEffect(() => {
@@ -90,9 +94,7 @@ const Navigation = () => {
 
         <>
             <NavContainer xs={12} minWidth={'600px'}  >
-                <Link to="/">
-                    <Logo />
-                </Link>
+                <Icon img_src={EscSVG} alt={'app logo'} />
 
                 {/* small or mobile - hamburger */}
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -173,6 +175,7 @@ const Navigation = () => {
             </NavContainer >
             {PopupState && <SignInPopUp />}
             <Outlet />
+
             {/* <StickyFooter /> */}
         </>
     )

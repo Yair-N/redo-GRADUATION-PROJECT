@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
 import { Slider } from '@mui/material'
 import { useTheme } from '@mui/material'
@@ -12,13 +12,23 @@ const RangeBar = (
         step,
         max,
         marks,
+        drivenValue
     }
 ) => {
+    const [value, setValue] = useState(0)
+
+    useEffect(() => {
+        if (value !== drivenValue && drivenValue)
+            setValue(drivenValue)
+    }, [drivenValue])
 
 
+    const handleChange = (event, newValue) => {
+        setValue(newValue)
 
-    const handleCommit = (event, newValue) => {
-        handleSelectedRange(newValue)
+    }
+    const handleCommit = () => {
+        handleSelectedRange(value)
     }
 
     return (
@@ -26,10 +36,12 @@ const RangeBar = (
             <RangeSlider
                 disabled={disabled}
                 defaultValue={0}
+                value={value}
                 step={step}
                 max={max}
                 marks={marks}
                 aria-label='Range'
+                onChange={handleChange}
                 onChangeCommitted={handleCommit}
                 valueLabelDisplay="auto"
                 track={false}

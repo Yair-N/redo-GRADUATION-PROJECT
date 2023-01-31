@@ -28,15 +28,14 @@ const HowFar = () => {
             data: [],
         },
     };
-    const theme = useTheme()
-    const [airports, setAirports] = useState({})
-    const [countries, setCountries] = useState({})
 
+    const [countries, setCountries] = useState([])
+    const [airportsByRange, setAirportsByrange] = useState([])
     const [isOrigin, setIsOrigin] = useState(false)
     const [origin, setOrigin] = useState({})
     const [chartData, setChartData] = useState(data)
     const [marks, setMarks] = useState([])
-    const [thumbValue, setThumbValue] = useState([])
+    const [thumbValue, setThumbValue] = useState(0)
 
     const range = 20000
     const jumps = 100
@@ -44,7 +43,7 @@ const HowFar = () => {
     useEffect(() => {
         const handleCalcDistance = async () => {
             setCountries(groupCountriesByDistance(origin, airportList, jumps, range))
-
+            setAirportsByrange(groupByDistance(origin, airportList, jumps, range))
         }
         if (origin !== {}) {
             handleCalcDistance()
@@ -70,6 +69,25 @@ const HowFar = () => {
             setChartData(data)
         }
     }, [countries])
+
+    useEffect(() => {
+        const updateLocations = () => {
+            let locations = {}
+            let countryAtDistance = countries[thumbValue]
+            let airportAtDistance = airportsByRange[thumbValue]
+            countryAtDistance?.map(country=>{
+                locations={...locations,[country]:airportAtDistance.filter(airport => airport.country_code === country)}
+            })
+
+            console.log(locations)
+
+
+
+        }
+
+        thumbValue > 0 && debounce(updateLocations(), 300)
+    }, [thumbValue])
+
 
 
     const onSearch = (event) => {
@@ -109,6 +127,7 @@ const HowFar = () => {
 
 
     const handleSelectedRange = (val) => {
+        val = parseInt(val)
         debounce(setThumbValue(val), 200)
     }
 
@@ -139,6 +158,7 @@ const HowFar = () => {
                 </span>
                 <InputContainer >
                     <RangeBar
+                        drivenValue={thumbValue}
                         disabled={!isOrigin}
                         step={null}
                         max={range}
@@ -149,8 +169,9 @@ const HowFar = () => {
                 <GraphContainer>
                     <RangeGraph
                         id={'graph'}
-                        isActive={isOrigin && airports !== []}
+                        isActive={isOrigin && airportList !== []}
                         data={chartData}
+                        handleSelectedRange={handleSelectedRange}
                     />
                 </GraphContainer>
             </HowFarWrapper>

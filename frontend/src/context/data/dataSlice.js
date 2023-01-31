@@ -6,7 +6,7 @@ const initialState = {
     countries: [],
     extendedCountries:[],
     airports: [],
-    rangedAirports:[],
+    countriesAirportsByRange:[],
     airlines: [],
     origin:{},
 };
@@ -51,8 +51,8 @@ export const dataSlice = createSlice({
         clearOrigin:(state) =>{
             state.origin = initialState.origin
         },
-        setRangedAirports: (state, action) =>{
-            state.rangedAirports = action.payload
+        setCountriesAirportsByRange: (state, action) =>{
+            state.countriesAirportsByRange = action.payload
         },
         clearRangedAirports: (state) =>{
             state.rangedAirports = []
