@@ -4,20 +4,12 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
 
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
+import { Box, IconButton, Menu, Avatar, Button, Tooltip, MenuItem, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from "@mui/material/Typography";
 
 import { anonPages, adminPages, customerPages, airlinePages } from '../utils/constants';
 
 import NavContainer from '../components/nav/NavContainer';
-import Logo from '../components/logo/Logo';
 import AvatarDropDown from '../components/nav/AvatarDropDown'
 
 
@@ -25,9 +17,9 @@ import { showPopUp, selectAuth, LoginAsync } from '../context/auth/authSlice';
 import { selectUser, getUserAsync, initUser } from '../context/user/userSlice';
 import SignInPopUp from '../components/popup/SignInPopup';
 
-import EscSVG from '../assets/esc.svg';
-import InSVG from '../assets/LinkedIn_icon_circle.svg'
+import EscSVG from '../assets/logo-192x192.png';
 import Icon from '../components/layout/Icon';
+import Footer from '../components/layout/Footer';
 const Navigation = () => {
 
     const dispatch = useDispatch()
@@ -94,7 +86,7 @@ const Navigation = () => {
 
         <>
             <NavContainer xs={12} minWidth={'600px'}  >
-                <Icon img_src={EscSVG} alt={'app logo'} />
+                <Icon img_src={EscSVG} alt={'app logo'} style={{height:'54px',margin:'.7rem'}}/>
 
                 {/* small or mobile - hamburger */}
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -176,7 +168,7 @@ const Navigation = () => {
             {PopupState && <SignInPopUp />}
             <Outlet />
 
-            {/* <StickyFooter /> */}
+            <Footer />
         </>
     )
 }
