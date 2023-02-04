@@ -8,7 +8,7 @@ from geo.models import Airport, Country
 
 # define customized model for use as User
 
-jsonPath = "static/mockup data/airports.json"
+jsonPath = "static/mockup data/airports_filtered.json"
 
 # json structure
 # {

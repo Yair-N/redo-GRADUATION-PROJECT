@@ -33,10 +33,10 @@ export const calcDistanceList = (origin, listOfObjects) => {
 }
 
 // will return a list of grouped locations by distance from origin
-export const groupByDistance = (origin, listOfObjects, division = 100, range = 20000) => {
-    if (range === 0 || range === division || division < 100 || listOfObjects.length < 1)
+export const groupByDistance = (list, division = 100, range = 20000) => {
+    if (range === 0 || range === division || division < 100 || list.length < 1)
         return [];
-    const list = calcDistanceList(origin, listOfObjects)
+    // const list = calcDistanceList(origin, listOfObjects)
     const intervals = range / division
     let groupedAirport = []
     let key = division
@@ -57,17 +57,17 @@ export const groupByDistance = (origin, listOfObjects, division = 100, range = 2
 
 
 // will return a list of grouped locations by distance from origin
-export const groupCountriesByDistance = (origin, listOfObjects, division = 100, range = 20000) => {
-    if (range === 0 || range === division || division < 100 || listOfObjects.length < 1)
+export const groupCountriesByDistance = (list, division = 100, range = 20000) => {
+    if (range === 0 || range === division || division < 100 || list.length < 1)
         return [];
-    const list = calcDistanceList(origin, listOfObjects)
+    // const list = calcDistanceList(origin, listOfObjects)
     const intervals = range / division
     let groupedCountries = []
     let key = division
 
     for (let i = 1; i < intervals; i++) {
         let group = new Set()
-        list.filter(obj => (obj.distance <= key) && (obj.distance > key - division)&&group.add(obj.country_code))
+        list.filter(obj => (obj.distance <= key) && (obj.distance > key - division) && group.add(obj.country_code))
         groupedCountries = {
             ...groupedCountries,
             [key]: Array.from(group.values())
@@ -78,4 +78,34 @@ export const groupCountriesByDistance = (origin, listOfObjects, division = 100, 
     }
 
     return groupedCountries
+}
+
+Array.prototype.max = function () {
+    return Math.max.apply(null, this);
+};
+export const minMaxCountry = (origin,list )=> {
+    // const list = calcDistanceList(origin, listOfObjects)
+    let minAirport
+    let maxAirport
+    let min = 30000
+    let max = 0
+    list = list.filter(airport=>airport.country_code !== origin.countryCode)
+    list.map(airport => {
+        if(airport.country_code !== origin.country_code && airport.distance < min) min= airport.distance;
+        if(airport.country_code !== origin.country_code&&airport.distance > max) max = airport.distance;
+    })
+
+    // let min = Math.min.apply(Math, ...distances)
+    // let max = Math.max.apply(Math, ...distances)
+    minAirport = list.filter(airport => airport.distance === min && airport.country_code !== origin.country_code)
+    maxAirport = list.filter(airport => airport.distance === max && airport.country_code !== origin.country_code)
+
+
+    return {min:minAirport, max:maxAirport}
+}
+
+
+export const returnCountry = (code,list ) =>{
+let country = list.find(country=> country.code === code)
+return country
 }

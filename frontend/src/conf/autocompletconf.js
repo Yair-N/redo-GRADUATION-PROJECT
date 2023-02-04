@@ -15,7 +15,7 @@ export const defaultTheme = {
     iconColor: 'rgba(52, 152, 219,.8)',
     lineColor: 'rgba(52, 152, 219,.8)',
     placeholderColor: 'grey',
-    zIndex: 0,
+    zIndex: 10,
     clearIconMargin: '3px 14px 0 0',
     searchIconMargin: '0 0 0 16px',
     inputBackground: 'inherit',

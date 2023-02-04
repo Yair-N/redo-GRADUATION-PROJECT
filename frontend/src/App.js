@@ -8,6 +8,7 @@ import { sessionStorageItems } from './utils/constants';
 
 import { getAirportAsync, getCountriesAsync, dataActions } from './context/data/dataSlice';
 import { selectAuth, setAuth } from './context/auth/authSlice';
+import Footer from './components/layout/Footer';
 import Navigation from './pages/Navigation';
 import Home from './pages/Home';
 
@@ -80,6 +81,7 @@ const App = () => {
           />
         </Route>
       </Routes>
+
     </ThemeProvider>
 
   )

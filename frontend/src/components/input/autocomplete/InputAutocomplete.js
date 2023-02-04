@@ -105,7 +105,7 @@ const InputAutocomplete = (
   }
 
   const handleOnKeyDown = (event) => {
-    // console.log(event)
+    
     switch (event.key) {
       case 'Enter':
         if (activeSuggestion > -1 && suggestions.length > 0) {
@@ -151,7 +151,6 @@ const InputAutocomplete = (
 
     if (typeof (element.$$typeof) === 'symbol') {
       let children = element['props']['children']['props']['children']
-      console.log(children, children.length)
       string = typeof (children) === Array ? children.join("").toString() : children
     }
     return string

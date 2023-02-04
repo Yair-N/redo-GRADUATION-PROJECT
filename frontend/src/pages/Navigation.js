@@ -86,7 +86,7 @@ const Navigation = () => {
 
         <>
             <NavContainer xs={12} minWidth={'600px'}  >
-                <Icon img_src={EscSVG} alt={'app logo'} style={{height:'54px',margin:'.7rem'}}/>
+                <Icon img_src={EscSVG} alt={'app logo'} style={{ height: '54px', margin: '.7rem' }} />
 
                 {/* small or mobile - hamburger */}
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -167,8 +167,8 @@ const Navigation = () => {
             </NavContainer >
             {PopupState && <SignInPopUp />}
             <Outlet />
-
             <Footer />
+
         </>
     )
 }

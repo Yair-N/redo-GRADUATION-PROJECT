@@ -57,10 +57,10 @@ const slideLeftForth = keyframes`
   }
 `;
 
-const Header = styled.header`
-height:90vh;
+const Header = styled.div`
+height:100%;
 width:100%;
-overflow:hidden;
+
 position:relative;
 & > div.banner{
   position:absolute;

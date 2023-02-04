@@ -12,7 +12,7 @@ const RangeBar = (
         step,
         max,
         marks,
-        drivenValue
+        drivenValue,
     }
 ) => {
     const [value, setValue] = useState(0)
@@ -20,7 +20,8 @@ const RangeBar = (
     useEffect(() => {
         if (value !== drivenValue && drivenValue)
             setValue(drivenValue)
-    }, [drivenValue])
+        if (disabled) setValue(0)
+    }, [drivenValue,disabled])
 
 
     const handleChange = (event, newValue) => {

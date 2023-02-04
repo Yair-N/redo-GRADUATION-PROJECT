@@ -1,5 +1,5 @@
 from ast import Str
-
+import re
 import pandas as pd
 
 
@@ -116,9 +116,23 @@ def flight_route_csv_to_json(path_to_csv: Str = r"mockup data/flightroutes.csv")
     # Finally write df to json
     df = raw_df
     df.to_json(r"mockup data/flight_routes.json", orient="records")
-    # print(df)
+
+
+def compareAITA():
+    path = "static/mockup data/airports.json"
+    df = pd.DataFrame(pd.read_json(path))
+
+    with open("static/mockup data/airportList.txt", "r") as file:
+        IATA_Code = []
+        for line in file:
+            IATA_Code.extend(re.findall(r"[A-Z]{3}", line))
+    df.drop(df[~df["iata_code"].isin(IATA_Code)].index, inplace=True)
+
+    df.to_json(r"airports_filtered.json", orient="records")
 
 
 # airports_csv_to_json()
 # airlines_csv_to_json()
-flight_route_csv_to_json()
+# flight_route_csv_to_json()
+
+compareAITA()

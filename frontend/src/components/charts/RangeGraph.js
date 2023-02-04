@@ -1,4 +1,4 @@
-import React, { useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { debounce } from '@mui/material';
 import { Bar } from 'react-chartjs-2';
 import {
@@ -28,7 +28,7 @@ ChartJS.register(
 
 
 
-const RangeGraph = ({ isActive, options, data,handleSelectedRange }, otherProps) => {
+const RangeGraph = ({ isActive, options, data, handleSelectedRange }, otherProps) => {
 
     const [index, setIndex] = useState(0)
     const [test, setTest] = useState(() => () => { null })
@@ -38,7 +38,7 @@ const RangeGraph = ({ isActive, options, data,handleSelectedRange }, otherProps)
         setTest(() => () => { null })
         handleSelectedRange(index.label)
     }, [index])
-    
+
     const handleClick = (event) => {
 
         if (event.type === "click") {
@@ -129,5 +129,5 @@ export default RangeGraph
 
 const Graph = styled.canvas`
 position:absolute;
-overflow-x:auto;
+overflow-y:visible;
 `

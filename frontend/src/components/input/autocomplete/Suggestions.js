@@ -88,7 +88,7 @@ const SuggestionsWrapper = styled.div`
   }
 
   > ul {
-    z-index:2;
+    z-index:5;
 
     list-style-type: none;
     margin: 0;
