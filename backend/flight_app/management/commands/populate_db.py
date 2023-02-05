@@ -13,18 +13,13 @@ class Command(BaseCommand):
     	this script is used to populate the database with data,
         please uncomment the data you wish to populate in the 'handle' function at the bottom
             '''
-    def __init__(self):
-        self.populate_countries=populate_countries.Command()
-        self.populate_airlines=populate_airlines.Command()
-        self.populate_users=populate_users.Command()
-        self.populate_airports = populate_airports.Command()
+        
     def handle(self, *args, **options):
         # makemigrations.Command()
         # migrate.Command().handle()
-        # self.setRoles()
-        self.populate_countries.handle()
-        self.populate_airlines.handle()
-        self.populate_users.handle()
-        self.populate_airports.handle()
+        populate_countries.Command()
+        populate_airlines.Command()
+        populate_users.Command()
+        populate_airports.Command()
 
         # print(jasonUsers())
