@@ -28,7 +28,7 @@ after selecting the range, a list of countries and airports on that range will s
 ### additional features I implemented but were not required
 
 * state is managed with Redux.js
-* authentication use of refresh token
+* authentication and use of refresh token
 * mock data population with commands on backend for demo
 
 ### Installation and running
