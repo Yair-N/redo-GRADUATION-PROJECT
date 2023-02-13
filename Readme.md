@@ -25,7 +25,7 @@ and presenting them on a bar graph under the range selection bar.
 
 after selecting the range, a list of countries and airports on that range will show  and the user can choose what the destination airport would be for the ticket search.  
 
-### additional features I implemented but were not required
+### additional features that were not mandatory
 
 * state is managed with Redux.js
 * authentication and use of refresh token
