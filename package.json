@@ -1,0 +1,14 @@
+{
+  "name": "final-project-esc",
+  "version": "1.0.0",
+  "description": "## Assignment description",
+  "main": "index.js",
+  "scripts": {
+    "tree-front": "tree ./frontend -d -I  'node_modules|env|.*|__pycache__'",
+    "tree-back": "tree ./backend -d -I  'node_modules|env|.*|__pycache__'",
+    "tree": "npm run tree-front && npm run tree-back"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
