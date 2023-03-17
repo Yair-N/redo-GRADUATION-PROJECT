@@ -1,35 +1,52 @@
 # Final project for FS React and Django  
 
-## assignment requirements
+## Assignment description
 
-### create a flight ticketing app using React as frontend and Django as backend  
+### Create a flight ticketing app
 
-app must have a database with tables for:  
+Mandatory requirements:  
 
-1. User.  
-2. Airline.  
-3. Flight.  
-4. Country.  
+* React.js
+* Django
+* A User should be able to search a flight and book a flight from any country  
+* Once flight is booked, seat vacancy on the flight should be updated respectively  
+* Create 'customer' and 'supplier' roles. Additional roles at your discretion
+* "User role" should effect functionality and access
+
+Optional:
+
+* Get Creative!
+* Use additional libraries
+* Use of state and context management such as Redux.js
+* Deploy the project on an external host
 
 ****
+**My take** on this project was to practice what I've learned but mostly to Explore new areas and challenges.  
+A great portion of the efforts went into setting goals, questioning methods,researching for best practice ,scrapping and re-writing.  
 
-**My take on this project** was to use it as a platform to discover and practice new technics and expend my knowledge beyond what was learned in this course.  
-a great portion of time went into setting goals, questioning methods and researching for best practice.  
-Im sure there are better ways to do it but this is a learning experience I must go through.  
+**The concept** is to offer the user a destination based on how far she, he or they would like to travel. once the user passes the departure location the app will present all possible destinations on an interactive Bar chart.  
 
-**The Idea for the app** is to offer the user a destination based on how far she or he would like to travel.
+### App's tech stack
 
-The app's data base has the location of countries and airports and can suggest the possibilities  
-one would have based on its departure location by calculating the distances of possible destinations  
-and presenting them on a bar graph under the range selection bar.  
+* JavaScript
+* React.js
+* Redux.js
+* CSS
+* HTML
+* Python
+* Django
 
-after selecting the range, a list of countries and airports on that range will show  and the user can choose what the destination airport would be for the ticket search.  
+### Libraries
 
-### additional features that were not mandatory
+* Axios
+* Material UI
+* Charts.js
+* GeoPy
+* Pandas
 
-* state is managed with Redux.js
-* authentication and use of refresh token
-* mock data population with commands on backend for demo
+
+### Project Layout
+
 
 ### Installation and running
 
