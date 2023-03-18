@@ -143,16 +143,9 @@ export default function AdminDashboard() {
             </TabPanel>
 
             <TabPanel value={value} index={4}>
-              Item Five
+              Work in progress ...
             </TabPanel>
 
-            <TabPanel value={value} index={5}>
-              Item Six
-            </TabPanel>
-
-            <TabPanel value={value} index={6}>
-              Item Seven
-            </TabPanel>
           </Grid>
         </Box>
       </Box >

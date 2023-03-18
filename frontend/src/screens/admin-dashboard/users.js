@@ -1,5 +1,5 @@
 import * as React from 'react';
-import CollapsibleTable from '../../components/tabel/collapsible-table';
+import CollapsibleTable from '../../components/table/collapsible-table';
 import { fetchUsersAsync } from '../../context/admin/adminSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../context/user/userSlice'

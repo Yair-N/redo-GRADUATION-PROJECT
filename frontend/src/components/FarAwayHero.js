@@ -14,7 +14,7 @@ import { useSelector, useDispatch } from 'react-redux/es/exports'
 import { selectAirports } from '../context/locations/airports/airportsSlice'
 import { fetchRangedAirportsAsync, selectRangedAirports, initRangedAirports } from '../context/locations/airports/airportsSlice'
 import { selectSuggested, initSuggested } from '../context/locations/countries/countriesSlice'
-import CountryCard from './coutry-card/CountryCard';
+import CountryCard from './country-card/CountryCard';
 
 
 const FarAwayHero = () => {

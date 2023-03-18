@@ -1,5 +1,5 @@
 import * as React from 'react';
-import CollapsibleTable from '../../components/tabel/collapsible-table';
+import CollapsibleTable from '../../components/table/collapsible-table';
 import { useDispatch, useSelector } from 'react-redux';
 import { AccountProfile } from '../../components/account/account-profile';
 import { Box, TextField } from '@mui/material';
