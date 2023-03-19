@@ -2,7 +2,7 @@
 // import { REACT_APP_PLACES_API_KEY } from "./.secret"
 
 
-export const BASE_URL = "http://0.0.0.0:8000"
+export const BASE_URL = "http://3.137.218.211/:8000"
 
 export const IMAGE_URL = (src_url)=>(BASE_URL+`${src_url}`)
 
