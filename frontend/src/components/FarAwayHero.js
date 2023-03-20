@@ -12,7 +12,7 @@ import RangeSlider from './slider input/rangeSlider';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 import { useSelector, useDispatch } from 'react-redux/es/exports'
 import { selectAirports } from '../context/locations/airports/airportsSlice'
-import { fetchRangedAirportsAsync, selectRangedAirports, initRangedAirports } from '../context/locations/airports/airportsSlice'
+import { fetchRangedAirportsAsync, selectRangedAirports, initRangedAirports, selectChartPending } from '../context/locations/airports/airportsSlice'
 import { selectSuggested, initSuggested } from '../context/locations/countries/countriesSlice'
 import CountryCard from './country-card/CountryCard';
 
@@ -21,6 +21,7 @@ const FarAwayHero = () => {
 
   const dispatch = useDispatch()
   const airports = useSelector(selectAirports)
+  const chartPending = useSelector(selectChartPending)
   const suggestedCountries = useSelector(selectSuggested)
   const rangedAirports = useSelector(selectRangedAirports)
   const [result, setResult] = React.useState(false)
@@ -118,6 +119,7 @@ const FarAwayHero = () => {
             sliderHandel={sliderHandel}
             marks={false}
             disabled={!result}
+            chartPending = {chartPending}
           />
 
         </CardContent>

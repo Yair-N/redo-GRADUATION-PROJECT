@@ -1,16 +1,17 @@
 from django.urls import path
-from .test import search_flight
+from .amadeus import *
 from rest_framework_simplejwt.views import TokenRefreshView
 
 
 urlpatterns = [
-    path('anon/<int:origin_id>/<int:dest_id>/',
-         search_flight, name='test'),
-         path('anon/<int:origin_id>/<int:dest_id>/<depart>/',
-         search_flight, name='test'),
-    path('anon/<int:origin_id>/<int:dest_id>/<depart>/<back>/',
-         search_flight, name='test'),
+    path('flight/',
+         search_offers, name='test'),
 
-   
-
+    path("""flight/<str:originLocationCode>/
+         <str:destinationLocationCode>/
+         <str:departureDate>/
+         <str:returnDate>/
+         <int:adults>/
+         """,
+         search_offers, name='test'),
 ]

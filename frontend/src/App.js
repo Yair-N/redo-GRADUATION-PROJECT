@@ -18,7 +18,7 @@ import Account from './pages/account';
 import { initTrip } from './context/trip/tripSlice';
 import BookingsPage from './screens/bookings';
 
-
+import {searchFlightAsync} from './context/amadeus/amadeusSlice';
 
 function App(props) {
   const dispatch = useDispatch()
@@ -48,6 +48,7 @@ function App(props) {
         dispatch(fetchAirportsAsync())
         dispatch(fetchCountriesAsync())
         dispatch(fetchAirlinesAsync())
+        dispatch(searchFlightAsync())
       }
       fetchData()
       return () => {

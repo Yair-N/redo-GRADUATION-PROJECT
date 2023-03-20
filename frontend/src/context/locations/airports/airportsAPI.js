@@ -1,6 +1,6 @@
 
-import axios from "../../../utils/api/customAxios";
-import { LOCATION_URL } from "../../../utils/api/urls";
+import axios from "../../../utils/customAxios";
+import { LOCATION_URL } from "../../../utils/urls";
 export const getAirports = (origin_id) => {
     let id = origin_id ? origin_id +'/' : 0
     return new Promise((resolve,reject) =>{

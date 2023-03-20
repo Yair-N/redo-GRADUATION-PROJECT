@@ -1,5 +1,5 @@
-import axios from "../../utils/api/customAxios";
-import { FLIGHT_URL } from '../../utils/api/urls';
+import axios from "../../utils/customAxios";
+import { FLIGHT_URL } from '../../utils/urls';
 
 
 

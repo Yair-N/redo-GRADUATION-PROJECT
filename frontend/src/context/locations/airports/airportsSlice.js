@@ -6,6 +6,7 @@ const initialState = {
     allAirportsList: [],
     rangedAirportsList: [],
     airportsInRange: [],
+    chartPending:false,
 };
 
 
@@ -68,7 +69,14 @@ export const airportsSlice = createSlice({
                 state.airportsList = action.payload;
             }
             )
+            .addCase(fetchRangedAirportsAsync.pending, (state) => {
+                state.chartPending = true
+                
+            }
+            )
             .addCase(fetchRangedAirportsAsync.fulfilled, (state, action) => {
+                state.chartPending = false
+
                 state.rangedAirportsList = JSON.parse(action.payload);
                 
             }
@@ -80,5 +88,7 @@ export const { setSuggestedAirports, setOriginId, setAirports, clearAirports,ini
 export const selectAirports = (state) => state.airports.airportsList;
 export const selectOriginAirportId = (state) => state.airports.originAirportId
 export const selectRangedAirports = (state) => state.airports.rangedAirportsList
+export const selectChartPending = (state) => state.airports.chartPending
+
 
 export default airportsSlice.reducer

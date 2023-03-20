@@ -1,7 +1,7 @@
 
-import  {privateAxios} from '../../utils/api/customAxios'
-import {USER_URL} from '../../utils/api/urls'
-import { BOOK_FLIGHT } from '../../utils/api/urls'
+import  {privateAxios} from '../../utils/customAxios'
+import {USER_URL} from '../../utils/urls'
+import { BOOK_FLIGHT } from '../../utils/urls'
 const axios = privateAxios
 
 export const getUserProfile = () => {

@@ -7,6 +7,7 @@ import adminSlice from './admin/adminSlice';
 import airlinesSlice from './airlines/airlinesSlice';
 import tripSlice from './trip/tripSlice';
 import airlineCompanySlice from './airline_company/airlineCompanySlice';
+import amadeusSlice from './amadeus/amadeusSlice';
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
     airlines: airlinesSlice,
     airline: airlineCompanySlice,
     trip: tripSlice,
+    flights:amadeusSlice
   },
 });
 

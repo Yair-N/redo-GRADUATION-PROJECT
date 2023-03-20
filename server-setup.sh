@@ -1,4 +1,4 @@
-#! bin/sh
+#! bin/bash
 # -*- coding: utf-8 -*-
 # vim: set ft=sh et ts=4 sw=4 sts=4:
 # =================================================================================================
@@ -54,7 +54,7 @@ set -o errexit
 # 1. If already in virtualenv: just give info
 ve() {
     local py=${1:-python3}    # default python version is python3
-    local env="${2:-./backend/env}"  # default virtual environment name is env
+    local env="${2:- ./backend/env}"  # default virtual environment name is env
 
     local bin="${env}/bin/activate"
 
@@ -64,12 +64,12 @@ ve() {
         if [ ! -d ${env} ]; then
             echo "Creating and activating virtual environment ${env}"
             ${py} -m venv ${env}
-            source ./${bin}
-            echo "Upgrading pip"
-            ${py} -m pip install --upgrade pip
+            source ${bin}
+            # echo "Upgrading pip"
+            # ${py} -m pip install --upgrade pip
         else
             echo "Virtual environment  ${env} already exists, activating..."
-            source ./${bin}
+            source ${bin}
         fi
     else
         echo "Already in a virtual environment!"
@@ -78,7 +78,9 @@ ve() {
     if [ -z "${VIRTUAL_ENV}" ]; then
         echo "Could not start Virtual enviormant"
         else
-        echo "Installing requirements.txt"
+        echo "Upgrading pip"
+        ${py} -m pip install --upgrade pip
+        echo "verifying requirements.txt"
         pip install -r ./backend/requirements.txt
     fi
 }

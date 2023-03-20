@@ -1,6 +1,6 @@
 
-import  axios from '../../utils/api/customAxios'
-import {AIRLINE_URL} from '../../utils/api/urls'
+import  axios from '../../utils/customAxios'
+import {AIRLINE_URL} from '../../utils/urls'
 
 export const getAirlines = () => {
     return new Promise((resolve,reject) =>{

@@ -1,5 +1,5 @@
-import { ADMIN_URL } from "../../utils/api/urls";
-import { privateAxios } from '../../utils/api/customAxios'
+import { ADMIN_URL } from "../../utils/urls";
+import { privateAxios } from '../../utils/customAxios'
 
 const axios = privateAxios
 

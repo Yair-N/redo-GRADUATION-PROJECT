@@ -131,8 +131,5 @@ frontend
 ### Installation and running
 
 * clone/ copy the repo  
-* `cd` to frontend folder and `npm i`  
-* at frontend folder, start frontend with `npm start`
-* `cd` to backend folder and create a python virtual env  
-* at backend folder after env is set and activated `pip install -r requirements.txt`  
-* at backend start backend with `{your python} manage.py runserver`
+* `cd` to project directory
+* run `source server-setup.sh && npm install`

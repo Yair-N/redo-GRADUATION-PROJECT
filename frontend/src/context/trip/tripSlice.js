@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { FLIGHT_URL } from '../../utils/api/urls';
+import { FLIGHT_URL } from '../../utils/urls';
 import { searchFlights } from './tripApi'
 // const fullDate = new Date().toUTCString()
 const now = new Date()

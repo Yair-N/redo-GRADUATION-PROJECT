@@ -14,8 +14,8 @@ urlpatterns = [
     path('user/', include('flight_app.views.user.urls'), name='user_ops'),
     path('supplier/', include('flight_app.views.supplier_views.urls'),
          name='airline_ops'),
-    path('flight_search/', include('flight_app.views.flight_search.urls'),
-         name='flight_search'),
+    path('flights/', include('flight_app.views.flight_search.urls'),
+         name='flights'),
 
 
 

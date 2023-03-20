@@ -1,18 +1,18 @@
 {
-  "name": "final-project-esc",
+  "name": "ec2-esc",
   "version": "1.0.0",
-  "description": "## Assignment description",
+  "description": "fs final project",
   "main": "index.js",
   "scripts": {
     "install-frontend": "npm install --legacy-peer-deps --prefix frontend ",
-    "install": "npm install-backend & npm run install-frontend",
+    "install": "npm run install-frontend ",
     "start":"npm run start-backend & npm start --prefix frontend",
-    "start-backend":"python3 backend/manage.py runserver",
+    "start-backend:dev":"python3 backend/manage.py runserver ",
     "tree-front": "tree ./frontend -d -I  'node_modules|env|.*|__pycache__'",
     "tree-back": "tree ./backend -d -I  'node_modules|env|.*|__pycache__'",
     "tree": "npm run tree-front && npm run tree-back"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Yair notkovich",
+  "license": "MIT"
 }

@@ -1,7 +1,7 @@
 import { ContactsOutlined } from '@mui/icons-material';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import jwtDecode from 'jwt-decode';
-import { IMAGE_URL } from '../../utils/api/urls';
+import { IMAGE_URL } from '../../utils/urls';
 import { uploadPicture, getUserProfile, updateUserProfile } from './userAPI'
 import { bookFlight } from './userAPI';
 const initialState = {

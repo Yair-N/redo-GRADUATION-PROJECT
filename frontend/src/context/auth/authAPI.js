@@ -1,6 +1,6 @@
 
-import  axios from '../../utils/api/customAxios'
-import {AUTH_URL} from '../../utils/api/urls'
+import  axios from '../../utils/customAxios'
+import {AUTH_URL} from '../../utils/urls'
 
 export const signIn = (user) => {
     return new Promise((resolve,reject) =>{

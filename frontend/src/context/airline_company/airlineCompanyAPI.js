@@ -1,6 +1,6 @@
 
-import { privateAxios } from '../../utils/api/customAxios'
-import {AIRLINE_URL} from '../../utils/api/urls'
+import { privateAxios } from '../../utils/customAxios'
+import {AIRLINE_URL} from '../../utils/urls'
 
 const axios = privateAxios
 

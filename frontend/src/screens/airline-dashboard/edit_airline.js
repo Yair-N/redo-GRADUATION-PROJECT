@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { selectUser, updateUserAsync } from '../../context/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { AIRLINE_LOGO } from '../../utils/api/urls';
+import { AIRLINE_LOGO } from '../../utils/urls';
 
 import {
     Box,

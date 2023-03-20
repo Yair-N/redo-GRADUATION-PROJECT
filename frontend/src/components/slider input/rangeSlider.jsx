@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux/es/exports'
 import { selectRangedAirports } from '../../context/locations/airports/airportsSlice'
 import { useDispatch } from 'react-redux/es/exports'
 import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 import Slider from '@mui/material/Slider';
 
@@ -59,7 +60,7 @@ function valuetext(value) {
   return `${value}`;
 }
 const RangeSlider = (props) => {
-  const { sliderHandel, max, step, marks, disabled } = props
+  const { sliderHandel, max, step, marks, disabled, chartPending } = props
   const dispatch = useDispatch()
   const rangedAirports = useSelector(selectRangedAirports)
   const [sliderValue, setSliderValue] = useState(0)
@@ -112,7 +113,7 @@ const RangeSlider = (props) => {
         valueLabelDisplay="auto"
       />
       <Box sx={{ height: '45px' }}>
-        <Bar options={options} data={data} />
+       {chartPending?<LinearProgress /> :<Bar options={options} data={data} />}
       </Box>
     </Box>
   )

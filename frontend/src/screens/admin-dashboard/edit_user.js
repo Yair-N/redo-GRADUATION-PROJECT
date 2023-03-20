@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { selectUser, updateUserAsync } from '../../context/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
-import { IMAGE_URL } from '../../utils/api/urls';
+import { IMAGE_URL } from '../../utils/urls';
 
 import {
     Box,

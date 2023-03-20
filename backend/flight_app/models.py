@@ -137,8 +137,6 @@ class Ticket(models.Model):
     Customer = models.ForeignKey(
         Customer, on_delete=models.CASCADE, null=False)
     Seats = models.IntegerField(default=1)
-    
-
 
     def __str__(self):
         return f'{self.pk}, {self.Flight}, {self.Customer}'
