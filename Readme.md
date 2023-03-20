@@ -62,32 +62,14 @@ Other libraries:
 * Charts.js
 * GeoPy
 * Pandas
+* requests
 
 ___
 
-### Project Layout
+### Project structure
 
 ```bash
-backend
-├── core
-├── flight_app
-│   ├── management
-│   │   └── commands
-│   ├── migrations
-│   ├── utils
-│   │   └── db_utils
-│   └── views
-│       ├── admin
-│       ├── auth
-│       ├── flight_search
-│       ├── general_views
-│       ├── supplier_views
-│       └── user
-└── images
-
-
-
-frontend
+./frontend
 ├── public
 └── src
     ├── assets
@@ -111,12 +93,14 @@ frontend
     │   ├── admin
     │   ├── airline_company
     │   ├── airlines
+    │   ├── amadeus
     │   ├── auth
     │   ├── locations
     │   │   ├── airports
     │   │   └── countries
     │   ├── trip
     │   └── user
+    ├── layout
     ├── pages
     ├── screens
     │   ├── admin-dashboard
@@ -124,9 +108,69 @@ frontend
     │   └── user-client
     ├── theme
     └── utils
-        └── api
+
+
+./backend
+├── build
+│   └── static
+│       ├── css
+│       ├── js
+│       └── media
+├── core
+├── flight_app
+│   ├── management
+│   │   └── commands
+│   ├── migrations
+│   ├── utils
+│   │   └── db_utils
+│   └── views
+│       ├── admin
+│       ├── auth
+│       ├── flight_search
+│       ├── general_views
+│       ├── supplier_views
+│       └── user
+├── images
+│   ├── algolia
+│   │   ├── men
+│   │   └── women
+│   ├── images
+│   ├── men
+│   └── women
+└── staticfiles
+    ├── admin
+    │   ├── css
+    │   │   └── vendor
+    │   │       └── select2
+    │   ├── fonts
+    │   ├── img
+    │   │   └── gis
+    │   └── js
+    │       ├── admin
+    │       └── vendor
+    │           ├── jquery
+    │           ├── select2
+    │           │   └── i18n
+    │           └── xregexp
+    ├── css
+    ├── js
+    ├── media
+    └── rest_framework
+        ├── css
+        ├── docs
+        │   ├── css
+        │   ├── img
+        │   └── js
+        ├── fonts
+        ├── img
+        └── js
+
 
 ```
+
+### Diagram of the instance as deployed on AWS
+
+![Diagram](esc-diagram.png)
 
 ### Installation and running
 

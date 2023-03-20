@@ -48,7 +48,7 @@ function App(props) {
         dispatch(fetchAirportsAsync())
         dispatch(fetchCountriesAsync())
         dispatch(fetchAirlinesAsync())
-        dispatch(searchFlightAsync())
+      
       }
       fetchData()
       return () => {

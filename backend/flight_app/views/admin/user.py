@@ -19,7 +19,7 @@ user_profile = UserProfileSerializer.Meta.model
 
 # get all users / create new user
 @api_view(["GET", "POST"])
-@permission_classes([IsAdminUser])
+@permission_classes([IsAuthenticated])
 def user_list(request):
     if request.method == "GET":
         # get all objects in the model user
@@ -38,7 +38,7 @@ def user_list(request):
 
 # get / modify a user
 @api_view(["GET", "PUT", "DELETE"])
-@permission_classes([IsAdminUser])
+@permission_classes([IsAuthenticated])
 def user_detail(request, id):
     try:
         obj = model.objects.get(id=id)

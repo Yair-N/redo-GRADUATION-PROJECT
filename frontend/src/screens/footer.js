@@ -9,7 +9,7 @@ function Copyright() {
     return (
         <Typography variant="body2" color="text.secondary">
             {'My final project with React And Django '}
-            <Link color="inherit" href="https://mui.com/">
+            <Link color="inherit" href="">
                 Esc Far away
             </Link>{' '}
             {new Date().getFullYear()}

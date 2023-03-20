@@ -19,6 +19,7 @@ import { showPopUp, selectAuth, LoginAsync } from '../context/auth/authSlice';
 import SignInPopUp from '../components/sign in popup/SigninPopup';
 import { getUserAsync } from '../context/user/userSlice';
 import StickyFooter from './footer';
+import Footer from '../layout/Footer';
 import {selectAirlines} from '../context/airlines/airlinesSlice';
 import { fetchAirlineAsync } from '../context/airline_company/airlineCompanySlice';
 
@@ -203,7 +204,7 @@ const EscAppBar = () => {
       </NavContainer >
       {PopupState && <SignInPopUp />}
       <Outlet />
-      <StickyFooter />
+      <Footer />
     </>
   );
 };
