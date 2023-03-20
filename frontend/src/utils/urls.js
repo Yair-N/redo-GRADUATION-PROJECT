@@ -1,7 +1,7 @@
 
 
-export const BASE_URL = process.env.NODE_ENV !== 'production'?"http://127.0.0.1:8000":"http://3.137.218.211"
-
+// export const BASE_URL = process.env.NODE_ENV !== 'production'?"http://127.0.0.1:8000":"http://3.135.201.138/"
+export const BASE_URL ="http://127.0.0.1:8000"
 export const IMAGE_URL = (src_url)=>(BASE_URL+`${src_url}`)
 
 export const LOCATION_URL = {
